@@ -5,14 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-
     android:gravity="bottom"
     app:umanoDragView="@id/dragView"
     app:umanoScrollableView="@id/listView"
-    app:umanoPanelHeight="200dp"
-    app:umanoOverlay="false"
+    app:umanoPanelHeight="300dp"
+    app:umanoOverlay="true"
     app:umanoParallaxOffset="200dp"
-    app:umanoShadowHeight="10dp">
+    app:umanoShadowHeight="0dp">
     <!-- gravity 를 bottom으로 하면 아래에서 위로 드래그, top으로 하면 위에서 아래로 드래그 할 수 있다.
          umanoDragView 드래그 해서 보여줄 view를 선택
          umanoScrollableView  슬라이딩 패널에 내용물이 패널에 표시되는것보다 많을 때 스크롤 해서 보여줄 view 부분
@@ -22,7 +21,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/background_white">
 
         <TextView
             android:layout_width="wrap_content"
@@ -44,28 +44,48 @@
         android:id="@+id/dragView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:clickable="true"
         android:focusable="false"
         android:orientation="vertical">
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="300dp"-->
-<!--            android:orientation="vertical">-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_overview"
+            android:paddingTop="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:paddingLeft="16sp"-->
-<!--                android:text="Action"-->
-<!--                android:textSize="24sp" />-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textStyle="normal"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:text="Overview" />
 
-<!--        </LinearLayout>-->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_up_arrow" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+        </LinearLayout>
 
         <!-- 스크롤 해서 보여줄 부분은 listview 또는 custom listview 또는 recyclerview를 사용 -->
         <ListView
             android:id="@+id/listView"
             android:layout_width="match_parent"
+            android:background="@color/white"
             android:layout_height="500dp">
 
         </ListView>
