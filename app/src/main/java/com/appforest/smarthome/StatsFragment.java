@@ -2,6 +2,7 @@ package com.appforest.smarthome;
 
 import android.os.Bundle;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -66,16 +67,31 @@ public class StatsFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_stats, container, false);
 
-        final ListView listView = view.findViewById(R.id.listView);
-        listView.setAdapter(new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1,
-                new String[]{"TV", "A/C", "Speaker"}));
+        ListView listview ;
+        ListViewAdapter adapter;
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getContext(), position+" 번째 값 : " + parent.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
-            }
-        });
+        // Adapter 생성
+        adapter = new ListViewAdapter() ;
+
+        // 리스트뷰 참조 및 Adapter달기
+        listview = (ListView) view.findViewById(R.id.listView);
+        listview.setAdapter(adapter);
+
+        // 첫 번째 아이템 추가.
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_tv),
+                "TV", "6.2 kw", "$0.90") ;
+        // 두 번째 아이템 추가.
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_aircon),
+                "A/C", "5.5 kw", "$0.85") ;
+        // 세 번째 아이템 추가.
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_speaker),
+                " Speaker", "4.3 kw", "$0.70") ;
+
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_washing),
+                " Washing", "3.0 kw", "$0.59") ;
+
+        adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_fan),
+                "Fan", "3.7 kw", "$0.62") ;
 
         return view;
     }

@@ -8,7 +8,7 @@
     android:gravity="bottom"
     app:umanoDragView="@id/dragView"
     app:umanoScrollableView="@id/listView"
-    app:umanoPanelHeight="300dp"
+    app:umanoPanelHeight="275dp"
     app:umanoOverlay="true"
     app:umanoParallaxOffset="200dp"
     app:umanoShadowHeight="0dp">
@@ -77,15 +77,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:padding="20dp"
-            android:weightSum="4"
+            android:paddingTop="20dp"
+            android:paddingLeft="55dp"
+            android:paddingRight="55dp"
             android:gravity="center"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:fontFamily="sans-serif-medium"
                 android:textStyle="normal"
                 android:textSize="14sp"
