@@ -10,8 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -52,6 +54,7 @@ public class StatsFragment extends Fragment {
         return fragment;
     }
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,15 +88,18 @@ public class StatsFragment extends Fragment {
                 "A/C", "5.5 kw", "$0.85") ;
         // 세 번째 아이템 추가.
         adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_speaker),
-                " Speaker", "4.3 kw", "$0.70") ;
+                "Speaker", "4.3 kw", "$0.70") ;
 
         adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_washing),
-                " Washing", "3.0 kw", "$0.59") ;
+                "Washer", "3.0 kw", "$0.59") ;
 
         adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_fan),
                 "Fan", "3.7 kw", "$0.62") ;
 
         return view;
+
+
     }
+
 
 }
