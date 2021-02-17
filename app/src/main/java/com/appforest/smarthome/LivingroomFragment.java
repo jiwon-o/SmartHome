@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +15,11 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class LivingroomFragment extends Fragment {
+
+    private ImageView lightButton;
+    private ImageView tvButton;
+    private ImageView airconButton;
+    private ImageView speakerButton;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +65,83 @@ public class LivingroomFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_livingroom, container, false);
+        View view = inflater.inflate(R.layout.fragment_livingroom, container, false);
+
+        lightButton = (ImageView) view.findViewById(R.id.iv_livingroom_light);
+        tvButton = (ImageView) view.findViewById(R.id.iv_livingroom_tv);
+        airconButton = (ImageView) view.findViewById(R.id.iv_livingroom_aircon);
+        speakerButton = (ImageView) view.findViewById(R.id.iv_livingroom_speaker);
+
+        lightPowerBtn(lightButton);
+        tvPowerBtn(tvButton);
+        airconPowerBtn(airconButton);
+        speakerPowerBtn(speakerButton);
+
+        return view;
+    }
+
+
+    private boolean lightChecked = true;
+    private void lightPowerBtn(ImageView lightButton) {
+        tvButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (lightChecked == true) {
+                    lightButton.setImageResource(R.drawable.ic_light);
+                    lightChecked = false;
+                } else {
+                    lightButton.setImageResource(R.drawable.ic_light_off);
+                    lightChecked = true;
+                }
+            }
+        });
+    }
+
+    private boolean tvChecked = true;
+    private void tvPowerBtn(ImageView tvButton) {
+        tvButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (tvChecked == true) {
+                    tvButton.setImageResource(R.drawable.ic_on);
+                    tvChecked = false;
+                } else {
+                    tvButton.setImageResource(R.drawable.ic_off);
+                    tvChecked = true;
+                }
+            }
+        });
+    }
+
+    private boolean airconChecked = true;
+    private void airconPowerBtn(ImageView airconButton) {
+        airconButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (airconChecked == true) {
+                    airconButton.setImageResource(R.drawable.ic_on);
+                    airconChecked = false;
+                } else {
+                    airconButton.setImageResource(R.drawable.ic_off);
+                    airconChecked = true;
+                }
+            }
+        });
+    }
+
+    private boolean speakerChecked = true;
+    private void speakerPowerBtn(ImageView speakerButton) {
+        speakerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (speakerChecked == true) {
+                    speakerButton.setImageResource(R.drawable.ic_on);
+                    speakerChecked = false;
+                } else {
+                    speakerButton.setImageResource(R.drawable.ic_off);
+                    speakerChecked = true;
+                }
+            }
+        });
     }
 }
