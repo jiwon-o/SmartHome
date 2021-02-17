@@ -30,10 +30,10 @@ public class RangeMarkerView extends MarkerView {
 
             CandleEntry ce = (CandleEntry) e;
 
-            tvContent.setText("" + Utils.formatNumber(ce.getHigh(), 0, true) + "km");
+            tvContent.setText("" + Utils.formatNumber(ce.getHigh(), 0, true) + "kw");
         } else {
 
-            tvContent.setText("" + Utils.formatNumber(e.getY(), 0, true) + "km");
+            tvContent.setText("" + Utils.formatNumber(e.getY(), 0, true) + "kw");
         }
 
         super.refreshContent(e, highlight);
@@ -41,7 +41,7 @@ public class RangeMarkerView extends MarkerView {
 
     @Override
     public MPPointF getOffset() {
-        return new MPPointF(-(getWidth() / 2), -getHeight() + 2);
+        return new MPPointF(-(getWidth() / 2), -(getHeight() + 30));
     }
 
 }

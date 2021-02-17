@@ -6,23 +6,20 @@ Rights: Copyrighted templates and codes. This template and code cannot be used w
 Copyright 2021 © AppForest.kr-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="100dp"
-    android:layout_height="60dp"
-    android:background="@drawable/img_ballon">
+    android:layout_width="55dp"
+    android:layout_height="25dp"
+    android:background="@drawable/img_balloon">
 
     <TextView
         android:id="@+id/tv_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
         android:layout_centerInParent="true"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:ellipsize="end"
-        android:paddingBottom="10dp"
-        android:singleLine="true"
-        android:text=""
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="#000000"
-        android:textSize="17sp" />
+        android:textStyle="normal"
+        android:textSize="14sp"
+        android:textColor="#FFFFFF"
+        android:lineSpacingExtra="3sp"
+        android:text=""/>
 
 </RelativeLayout>

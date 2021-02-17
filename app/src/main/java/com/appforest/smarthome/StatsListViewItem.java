@@ -2,7 +2,7 @@ package com.appforest.smarthome;
 
 import android.graphics.drawable.Drawable;
 
-public class ListViewItem {
+public class StatsListViewItem {
     private Drawable iconDrawable ;
     private String titleStr ;
     private String UsageStr ;

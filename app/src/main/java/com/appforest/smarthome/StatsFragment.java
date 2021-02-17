@@ -90,10 +90,10 @@ public class StatsFragment extends Fragment {
 
 
         ListView listview;
-        ListViewAdapter adapter;
+        StatsListViewAdapter adapter;
 
         // Adapter 생성
-        adapter = new ListViewAdapter();
+        adapter = new StatsListViewAdapter();
 
         // 리스트뷰 참조 및 Adapter달기
         listview = (ListView) view.findViewById(R.id.listView);
@@ -168,7 +168,7 @@ public class StatsFragment extends Fragment {
         {   // // X-Axis Style // //
             xAxis = chart.getXAxis();
             xAxis.setLabelCount(7, true);
-            xAxis.setTextColor(Color.GRAY);
+            xAxis.setTextColor(Color.BLACK);
             xAxis.setTextSize(11);
             xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
             xAxis.setDrawGridLines(false);
@@ -187,18 +187,18 @@ public class StatsFragment extends Fragment {
         {   // // Y-Axis Style // //
             yAxis = chart.getAxisLeft();
             yAxis.setLabelCount(3, true);
-            yAxis.setTextColor(Color.GRAY);
+            yAxis.setTextColor(Color.BLACK);
             yAxis.setTextSize(12);
-            yAxis.setAxisMaximum(80f);
+            yAxis.setAxisMaximum(20f);
             yAxis.setAxisMinimum(0f);
-            yAxis.setGranularity(40f);
+            yAxis.setGranularity(10f);
             yAxis.setPosition(YAxis.YAxisLabelPosition.OUTSIDE_CHART);
-            yAxis.setDrawGridLines(true);
+            yAxis.setDrawGridLines(false);
             yAxis.setAxisLineColor(Color.rgb(248, 248, 247));
             chart.getAxisRight().setEnabled(false);
         }
 
-        setData(7, 80);
+        setData(7, 15);
         chart.getLegend().setEnabled(false);
 
         chart.animateXY(1000, 1000);
@@ -241,11 +241,12 @@ public class StatsFragment extends Fragment {
             set1.setDrawFilled(true);
             set1.setDrawCircles(true);
             set1.setDrawValues(!set1.isDrawValuesEnabled());
-            set1.setLineWidth(1.8f);
-            set1.setCircleRadius(4f);
-            set1.setCircleColor(Color.rgb(243, 182, 61));
-            set1.setHighLightColor(Color.GRAY);
-            set1.setColor(Color.rgb(243, 182, 61));
+            set1.setLineWidth(1.6f);
+            set1.setCircleRadius(5f);
+            set1.setCircleHoleRadius(2.5f);
+            set1.setCircleColor(Color.argb(70, 243, 182, 61));
+            set1.setCircleHoleColor(Color.rgb(243, 182, 61));
+            set1.setColor(Color.rgb(255, 192, 68));
             set1.setFillColor(Color.rgb(248, 248, 247));
             set1.setFillAlpha(100);
             set1.setDrawHorizontalHighlightIndicator(false);
@@ -280,9 +281,5 @@ public class StatsFragment extends Fragment {
         }
     }
 
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) { // res/menu 에서 친구 탭에서 작동 할 menu를 가져온다.
-        inflater.inflate(R.menu.stats_menu, menu);
-        super.onCreateOptionsMenu(menu, inflater);
-    }
 
 }
