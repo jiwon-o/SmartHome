@@ -14,4 +14,5 @@
     <color name="pastel_red">#FFE84E4E</color>
     <color name="background_on">#FFFFFFFF</color>
     <color name="background_off">#FFF0F0F0</color>
+    <color name="checking">#FFFFE9BE</color>
 </resources>

@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.Image;
 import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
@@ -16,6 +17,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -41,6 +44,8 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
     private CardView tvBackground;
     private CardView airconBackground;
     private CardView speakerBackground;
+
+    private ImageView checkingImage;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -102,6 +107,10 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
         airconBackground = (CardView) view.findViewById(R.id.background_livingroom_aircon);
         speakerBackground = (CardView) view.findViewById(R.id.background_livingroom_speaker);
 
+        checkingImage = (ImageView) view.findViewById(R.id.iv_check);
+
+        buttonAnimation(checkingImage);
+
         lightPowerBtn(lightButton);
         tvPowerBtn(tvButton);
         airconPowerBtn(airconButton);
@@ -114,7 +123,11 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
         return view;
     }
 
-
+    private void buttonAnimation(ImageView checkingImage) {
+        //You can check the animation you received in the anim folder.
+        Animation startAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.flash_animation);
+        checkingImage.startAnimation(startAnimation);
+    }
 
 
     private boolean lightChecked = false;
