@@ -157,6 +157,7 @@
                 android:weightSum="2">
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_plus"
                     android:layout_width="0dp"
                     android:layout_height="112dp"
                     android:layout_weight="1"

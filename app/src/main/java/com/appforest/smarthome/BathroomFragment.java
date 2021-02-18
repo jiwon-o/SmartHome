@@ -2,6 +2,7 @@ package com.appforest.smarthome;
 
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -15,7 +16,7 @@ import android.widget.TextView;
  * Use the {@link BathroomFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BathroomFragment extends Fragment {
+public class BathroomFragment extends Fragment implements View.OnClickListener {
 
     private ImageView lightButton;
 
@@ -70,6 +71,10 @@ public class BathroomFragment extends Fragment {
 
         lightPowerBtn(lightButton);
 
+        CardView open = (CardView) view.findViewById(R.id.btn_plus);
+
+        open.setOnClickListener(this);
+
         return view;
     }
 
@@ -88,5 +93,23 @@ public class BathroomFragment extends Fragment {
                 }
             }
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+
+            case R.id.btn_plus:
+                // 데이터를 다이얼로그로 보내는 코드
+                Bundle args = new Bundle();
+                args.putString("key", "value");
+                //---------------------------------------.//
+                FragmentDialog dialog = new FragmentDialog();
+                dialog.setArguments(args); // 데이터 전달
+                dialog.show(getActivity().getSupportFragmentManager(),"tag");
+
+                break;
+
+        }
     }
 }

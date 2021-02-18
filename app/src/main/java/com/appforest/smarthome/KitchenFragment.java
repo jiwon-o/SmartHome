@@ -2,6 +2,7 @@ package com.appforest.smarthome;
 
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -15,7 +16,7 @@ import android.widget.TextView;
  * Use the {@link KitchenFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class KitchenFragment extends Fragment {
+public class KitchenFragment extends Fragment implements View.OnClickListener {
 
     private ImageView lightButton;
     private ImageView fridgeButton;
@@ -23,6 +24,9 @@ public class KitchenFragment extends Fragment {
 
     private TextView fridgeText;
     private TextView ovenText;
+
+    private CardView fridgeBackground;
+    private CardView ovenBackground;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -78,9 +82,15 @@ public class KitchenFragment extends Fragment {
         fridgeText = (TextView) view.findViewById(R.id.tv_kitchen_fridge);
         ovenText = (TextView) view.findViewById(R.id.tv_kitchen_oven);
 
+        fridgeBackground = (CardView) view.findViewById(R.id.background_kitchen_fridge);
+        ovenBackground = (CardView) view.findViewById(R.id.background_kitchen_oven);
+
         lightPowerBtn(lightButton);
         fridgePowerBtn(fridgeButton);
         ovenPowerBtn(ovenButton);
+
+        CardView open = (CardView) view.findViewById(R.id.btn_plus);
+        open.setOnClickListener(this);
 
         return view;
     }
@@ -102,7 +112,7 @@ public class KitchenFragment extends Fragment {
         });
     }
 
-    private boolean fridgeChecked = true;
+    private boolean fridgeChecked = false;
     private void fridgePowerBtn(ImageView fridgeButton) {
         fridgeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,10 +120,12 @@ public class KitchenFragment extends Fragment {
                 if (fridgeChecked == true) {
                     fridgeButton.setImageResource(R.drawable.ic_on);
                     fridgeText.setText("ON");
+                    fridgeBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_on));
                     fridgeChecked = false;
                 } else {
                     fridgeButton.setImageResource(R.drawable.ic_off);
                     fridgeText.setText("OFF");
+                    fridgeBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_off));
                     fridgeChecked = true;
                 }
             }
@@ -128,14 +140,34 @@ public class KitchenFragment extends Fragment {
                 if (ovenChecked == true) {
                     ovenButton.setImageResource(R.drawable.ic_on);
                     ovenText.setText("ON");
+                    ovenBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_on));
                     ovenChecked = false;
                 } else {
                     ovenButton.setImageResource(R.drawable.ic_off);
                     ovenText.setText("OFF");
+                    ovenBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_off));
                     ovenChecked = true;
                 }
             }
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+
+            case R.id.btn_plus:
+                // 데이터를 다이얼로그로 보내는 코드
+                Bundle args = new Bundle();
+                args.putString("key", "value");
+                //---------------------------------------.//
+                FragmentDialog dialog = new FragmentDialog();
+                dialog.setArguments(args); // 데이터 전달
+                dialog.show(getActivity().getSupportFragmentManager(),"tag");
+
+                break;
+
+        }
     }
 
 }

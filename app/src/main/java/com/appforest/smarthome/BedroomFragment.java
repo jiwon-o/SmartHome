@@ -2,6 +2,7 @@ package com.appforest.smarthome;
 
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -15,7 +16,7 @@ import android.widget.TextView;
  * Use the {@link BedroomFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BedroomFragment extends Fragment {
+public class BedroomFragment extends Fragment implements View.OnClickListener {
 
     private ImageView lightButton;
     private ImageView tvButton;
@@ -25,6 +26,10 @@ public class BedroomFragment extends Fragment {
     private TextView tvText;
     private TextView airconText;
     private TextView fanText;
+
+    private CardView tvBackground;
+    private CardView airconBackground;
+    private CardView fanBackground;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -82,16 +87,23 @@ public class BedroomFragment extends Fragment {
         airconText = (TextView) view.findViewById(R.id.tv_bedroom_aircon);
         fanText = (TextView) view.findViewById(R.id.tv_bedroom_fan);
 
+        tvBackground = (CardView) view.findViewById(R.id.background_bedroom_tv);
+        airconBackground = (CardView) view.findViewById(R.id.background_bedroom_aircon);
+        fanBackground = (CardView) view.findViewById(R.id.background_bedroom_fan);
+
         lightPowerBtn(lightButton);
         tvPowerBtn(tvButton);
         airconPowerBtn(airconButton);
         fanPowerBtn(fanButton);
 
+        CardView open = (CardView) view.findViewById(R.id.btn_plus);
+        open.setOnClickListener(this);
+
         return view;
     }
 
 
-    private boolean lightChecked = true;
+    private boolean lightChecked = false;
     private void lightPowerBtn(ImageView lightButton) {
         lightButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,7 +119,7 @@ public class BedroomFragment extends Fragment {
         });
     }
 
-    private boolean tvChecked = true;
+    private boolean tvChecked = false;
     private void tvPowerBtn(ImageView tvButton) {
         tvButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,10 +127,12 @@ public class BedroomFragment extends Fragment {
                 if (tvChecked == true) {
                     tvButton.setImageResource(R.drawable.ic_on);
                     tvText.setText("ON");
+                    tvBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_on));
                     tvChecked = false;
                 } else {
                     tvButton.setImageResource(R.drawable.ic_off);
                     tvText.setText("OFF");
+                    tvBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_off));
                     tvChecked = true;
                 }
             }
@@ -133,10 +147,12 @@ public class BedroomFragment extends Fragment {
                 if (airconChecked == true) {
                     airconButton.setImageResource(R.drawable.ic_on);
                     airconText.setText("ON");
+                    airconBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_on));
                     airconChecked = false;
                 } else {
                     airconButton.setImageResource(R.drawable.ic_off);
                     airconText.setText("OFF");
+                    airconBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_off));
                     airconChecked = true;
                 }
             }
@@ -151,13 +167,33 @@ public class BedroomFragment extends Fragment {
                 if (fanChecked == true) {
                     fanButton.setImageResource(R.drawable.ic_on);
                     fanText.setText("ON");
+                    fanBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_on));
                     fanChecked = false;
                 } else {
                     fanButton.setImageResource(R.drawable.ic_off);
                     fanText.setText("OFF");
+                    fanBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_off));
                     fanChecked = true;
                 }
             }
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+
+            case R.id.btn_plus:
+                // 데이터를 다이얼로그로 보내는 코드
+                Bundle args = new Bundle();
+                args.putString("key", "value");
+                //---------------------------------------.//
+                FragmentDialog dialog = new FragmentDialog();
+                dialog.setArguments(args); // 데이터 전달
+                dialog.show(getActivity().getSupportFragmentManager(),"tag");
+
+                break;
+
+        }
     }
 }

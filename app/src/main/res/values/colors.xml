@@ -12,4 +12,6 @@
     <color name="macaroni_and_cheese">#FFEDC543</color>
     <color name="transparency">#00FF0000</color>
     <color name="pastel_red">#FFE84E4E</color>
+    <color name="background_on">#FFFFFFFF</color>
+    <color name="background_off">#FFF0F0F0</color>
 </resources>

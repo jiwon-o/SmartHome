@@ -3,6 +3,7 @@ package com.appforest.smarthome;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
@@ -36,6 +37,10 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
     private TextView tvText;
     private TextView airconText;
     private TextView speakerText;
+
+    private CardView tvBackground;
+    private CardView airconBackground;
+    private CardView speakerBackground;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -93,13 +98,16 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
         airconText = (TextView) view.findViewById(R.id.tv_livingroom_aircon);
         speakerText = (TextView) view.findViewById(R.id.tv_livingroom_speaker);
 
+        tvBackground = (CardView) view.findViewById(R.id.background_livingroom_tv);
+        airconBackground = (CardView) view.findViewById(R.id.background_livingroom_aircon);
+        speakerBackground = (CardView) view.findViewById(R.id.background_livingroom_speaker);
+
         lightPowerBtn(lightButton);
         tvPowerBtn(tvButton);
         airconPowerBtn(airconButton);
         speakerPowerBtn(speakerButton);
 
         CardView open = (CardView) view.findViewById(R.id.btn_plus);
-
         open.setOnClickListener(this);
 
 
@@ -109,7 +117,7 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
 
 
 
-    private boolean lightChecked = true;
+    private boolean lightChecked = false;
     private void lightPowerBtn(ImageView lightButton) {
         lightButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,17 +141,20 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
                 if (tvChecked == true) {
                     tvButton.setImageResource(R.drawable.ic_on);
                     tvText.setText("ON");
+                    tvBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_on));
                     tvChecked = false;
                 } else {
                     tvButton.setImageResource(R.drawable.ic_off);
                     tvText.setText("OFF");
+                    tvBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_off));
+
                     tvChecked = true;
                 }
             }
         });
     }
 
-    private boolean airconChecked = true;
+    private boolean airconChecked = false;
     private void airconPowerBtn(ImageView airconButton) {
         airconButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -151,10 +162,12 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
                 if (airconChecked == true) {
                     airconButton.setImageResource(R.drawable.ic_on);
                     airconText.setText("ON");
+                    airconBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_on));
                     airconChecked = false;
                 } else {
                     airconButton.setImageResource(R.drawable.ic_off);
                     airconText.setText("OFF");
+                    airconBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_off));
                     airconChecked = true;
                 }
             }
@@ -169,10 +182,12 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
                 if (speakerChecked == true) {
                     speakerButton.setImageResource(R.drawable.ic_on);
                     speakerText.setText("Playing");
+                    speakerBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_on));
                     speakerChecked = false;
                 } else {
                     speakerButton.setImageResource(R.drawable.ic_off);
                     speakerText.setText("OFF");
+                    speakerBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_off));
                     speakerChecked = true;
                 }
             }

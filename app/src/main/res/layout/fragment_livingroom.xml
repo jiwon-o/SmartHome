@@ -46,7 +46,7 @@
                             android:id="@+id/iv_livingroom_light"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic_light_off" />
+                            android:src="@drawable/ic_light" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -156,10 +156,11 @@
                 android:weightSum="2">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/background_livingroom_tv"
                     android:layout_width="0dp"
                     android:layout_height="112dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
+                    app:cardBackgroundColor="@color/background_off"
                     app:cardCornerRadius="5dp"
                     app:cardElevation="0dp">
 
@@ -205,19 +206,20 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="16dp"
                         android:src="@drawable/ic_off" />
 
 
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/background_livingroom_aircon"
                     android:layout_width="0dp"
                     android:layout_height="112dp"
                     android:layout_weight="1"
                     android:layout_marginLeft="12dp"
-                    app:cardBackgroundColor="@color/white"
+                    app:cardBackgroundColor="@color/background_on"
                     app:cardCornerRadius="5dp"
                     app:cardElevation="0dp">
 
@@ -252,7 +254,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
                             android:fontFamily="sans-serif-medium"
-                            android:text="OFF"
+                            android:text="ON"
                             android:textColor="@color/macaroni_and_cheese"
                             android:textSize="12sp"
                             android:textStyle="normal" />
@@ -263,9 +265,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginRight="8dp"
-                        android:src="@drawable/ic_off" />
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="16dp"
+                        android:src="@drawable/ic_on" />
 
 
                 </androidx.cardview.widget.CardView>
@@ -286,10 +288,11 @@
                 android:weightSum="2">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/background_livingroom_speaker"
                     android:layout_width="0dp"
                     android:layout_height="112dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
+                    app:cardBackgroundColor="@color/background_off"
                     app:cardCornerRadius="5dp"
                     app:cardElevation="0dp">
 
@@ -335,8 +338,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="16dp"
                         android:src="@drawable/ic_off" />
 
 
