@@ -47,6 +47,10 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
 
     private ImageView checkingImage;
 
+    FrameLayout frameLayoutLight;
+
+    Intent intent;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -118,6 +122,15 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
 
         CardView open = (CardView) view.findViewById(R.id.btn_plus);
         open.setOnClickListener(this);
+
+        frameLayoutLight = (FrameLayout) view.findViewById(R.id.btn_light);
+        frameLayoutLight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(getActivity(), LightActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         return view;
