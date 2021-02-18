@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +16,16 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class BedroomFragment extends Fragment {
+
+    private ImageView lightButton;
+    private ImageView tvButton;
+    private ImageView airconButton;
+    private ImageView fanButton;
+
+    private TextView tvText;
+    private TextView airconText;
+    private TextView fanText;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +71,93 @@ public class BedroomFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bedroom, container, false);
+        View view = inflater.inflate(R.layout.fragment_bedroom, container, false);
+
+        lightButton = (ImageView) view.findViewById(R.id.iv_bedroom_light);
+        tvButton = (ImageView) view.findViewById(R.id.iv_bedroom_tv);
+        airconButton = (ImageView) view.findViewById(R.id.iv_bedroom_aircon);
+        fanButton = (ImageView) view.findViewById(R.id.iv_bedroom_fan);
+
+        tvText = (TextView) view.findViewById(R.id.tv_bedroom_tv);
+        airconText = (TextView) view.findViewById(R.id.tv_bedroom_aircon);
+        fanText = (TextView) view.findViewById(R.id.tv_bedroom_fan);
+
+        lightPowerBtn(lightButton);
+        tvPowerBtn(tvButton);
+        airconPowerBtn(airconButton);
+        fanPowerBtn(fanButton);
+
+        return view;
+    }
+
+
+    private boolean lightChecked = true;
+    private void lightPowerBtn(ImageView lightButton) {
+        lightButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (lightChecked == true) {
+                    lightButton.setImageResource(R.drawable.ic_light);
+                    lightChecked = false;
+                } else {
+                    lightButton.setImageResource(R.drawable.ic_light_off);
+                    lightChecked = true;
+                }
+            }
+        });
+    }
+
+    private boolean tvChecked = true;
+    private void tvPowerBtn(ImageView tvButton) {
+        tvButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (tvChecked == true) {
+                    tvButton.setImageResource(R.drawable.ic_on);
+                    tvText.setText("ON");
+                    tvChecked = false;
+                } else {
+                    tvButton.setImageResource(R.drawable.ic_off);
+                    tvText.setText("OFF");
+                    tvChecked = true;
+                }
+            }
+        });
+    }
+
+    private boolean airconChecked = true;
+    private void airconPowerBtn(ImageView airconButton) {
+        airconButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (airconChecked == true) {
+                    airconButton.setImageResource(R.drawable.ic_on);
+                    airconText.setText("ON");
+                    airconChecked = false;
+                } else {
+                    airconButton.setImageResource(R.drawable.ic_off);
+                    airconText.setText("OFF");
+                    airconChecked = true;
+                }
+            }
+        });
+    }
+
+    private boolean fanChecked = true;
+    private void fanPowerBtn(ImageView fanButton) {
+        fanButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (fanChecked == true) {
+                    fanButton.setImageResource(R.drawable.ic_on);
+                    fanText.setText("ON");
+                    fanChecked = false;
+                } else {
+                    fanButton.setImageResource(R.drawable.ic_off);
+                    fanText.setText("OFF");
+                    fanChecked = true;
+                }
+            }
+        });
     }
 }

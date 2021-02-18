@@ -1,24 +1,28 @@
 package com.appforest.smarthome;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.graphics.Point;
 import android.os.Bundle;
 
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
+import android.view.Display;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.view.Window;
+import android.view.WindowManager;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link BathroomFragment#newInstance} factory method to
+ * Use the {@link FragmentDialog#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BathroomFragment extends Fragment {
-
-    private ImageView lightButton;
-
+public class FragmentDialog extends DialogFragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,7 +33,9 @@ public class BathroomFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public BathroomFragment() {
+    private Fragment fragment;
+
+    public FragmentDialog() {
         // Required empty public constructor
     }
 
@@ -39,11 +45,11 @@ public class BathroomFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment BathroomFragment.
+     * @return A new instance of fragment FragmentDialog.
      */
     // TODO: Rename and change types and number of parameters
-    public static BathroomFragment newInstance(String param1, String param2) {
-        BathroomFragment fragment = new BathroomFragment();
+    public static FragmentDialog newInstance(String param1, String param2) {
+        FragmentDialog fragment = new FragmentDialog();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -64,29 +70,14 @@ public class BathroomFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_bathroom, container, false);
+        View view = inflater.inflate(R.layout.fragment_dialog, container, false);
 
-        lightButton = (ImageView) view.findViewById(R.id.iv_bathroom_light);
+        Bundle args = getArguments();
+        String value = args.getString("key");
 
-        lightPowerBtn(lightButton);
+        getDialog().getWindow().setGravity(Gravity.BOTTOM);
+        getDialog().getWindow().setBackgroundDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.background_overview));
 
         return view;
-    }
-
-
-    private boolean lightChecked = true;
-    private void lightPowerBtn(ImageView lightButton) {
-        lightButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (lightChecked == true) {
-                    lightButton.setImageResource(R.drawable.ic_light);
-                    lightChecked = false;
-                } else {
-                    lightButton.setImageResource(R.drawable.ic_light_off);
-                    lightChecked = true;
-                }
-            }
-        });
     }
 }

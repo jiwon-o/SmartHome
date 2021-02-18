@@ -1,25 +1,42 @@
 package com.appforest.smarthome;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link LivingroomFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class LivingroomFragment extends Fragment {
+public class LivingroomFragment extends Fragment implements View.OnClickListener {
 
     private ImageView lightButton;
     private ImageView tvButton;
     private ImageView airconButton;
     private ImageView speakerButton;
+
+    private TextView tvText;
+    private TextView airconText;
+    private TextView speakerText;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -72,18 +89,29 @@ public class LivingroomFragment extends Fragment {
         airconButton = (ImageView) view.findViewById(R.id.iv_livingroom_aircon);
         speakerButton = (ImageView) view.findViewById(R.id.iv_livingroom_speaker);
 
+        tvText = (TextView) view.findViewById(R.id.tv_livingroom_tv);
+        airconText = (TextView) view.findViewById(R.id.tv_livingroom_aircon);
+        speakerText = (TextView) view.findViewById(R.id.tv_livingroom_speaker);
+
         lightPowerBtn(lightButton);
         tvPowerBtn(tvButton);
         airconPowerBtn(airconButton);
         speakerPowerBtn(speakerButton);
 
+        CardView open = (CardView) view.findViewById(R.id.btn_plus);
+
+        open.setOnClickListener(this);
+
+
         return view;
     }
 
 
+
+
     private boolean lightChecked = true;
     private void lightPowerBtn(ImageView lightButton) {
-        tvButton.setOnClickListener(new View.OnClickListener() {
+        lightButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (lightChecked == true) {
@@ -104,9 +132,11 @@ public class LivingroomFragment extends Fragment {
             public void onClick(View v) {
                 if (tvChecked == true) {
                     tvButton.setImageResource(R.drawable.ic_on);
+                    tvText.setText("ON");
                     tvChecked = false;
                 } else {
                     tvButton.setImageResource(R.drawable.ic_off);
+                    tvText.setText("OFF");
                     tvChecked = true;
                 }
             }
@@ -120,9 +150,11 @@ public class LivingroomFragment extends Fragment {
             public void onClick(View v) {
                 if (airconChecked == true) {
                     airconButton.setImageResource(R.drawable.ic_on);
+                    airconText.setText("ON");
                     airconChecked = false;
                 } else {
                     airconButton.setImageResource(R.drawable.ic_off);
+                    airconText.setText("OFF");
                     airconChecked = true;
                 }
             }
@@ -136,12 +168,33 @@ public class LivingroomFragment extends Fragment {
             public void onClick(View v) {
                 if (speakerChecked == true) {
                     speakerButton.setImageResource(R.drawable.ic_on);
+                    speakerText.setText("Playing");
                     speakerChecked = false;
                 } else {
                     speakerButton.setImageResource(R.drawable.ic_off);
+                    speakerText.setText("OFF");
                     speakerChecked = true;
                 }
             }
         });
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+
+            case R.id.btn_plus:
+                // 데이터를 다이얼로그로 보내는 코드
+                Bundle args = new Bundle();
+                args.putString("key", "value");
+                //---------------------------------------.//
+                FragmentDialog dialog = new FragmentDialog();
+                dialog.setArguments(args); // 데이터 전달
+                dialog.show(getActivity().getSupportFragmentManager(),"tag");
+
+                break;
+
+        }
     }
 }

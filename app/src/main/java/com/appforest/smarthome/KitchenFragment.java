@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +16,14 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class KitchenFragment extends Fragment {
+
+    private ImageView lightButton;
+    private ImageView fridgeButton;
+    private ImageView ovenButton;
+
+    private TextView fridgeText;
+    private TextView ovenText;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +69,73 @@ public class KitchenFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_kitchen, container, false);
+        View view = inflater.inflate(R.layout.fragment_kitchen, container, false);
+
+        lightButton = (ImageView) view.findViewById(R.id.iv_kitchen_light);
+        fridgeButton = (ImageView) view.findViewById(R.id.iv_kitchen_fridge);
+        ovenButton = (ImageView) view.findViewById(R.id.iv_kitchen_oven);
+
+        fridgeText = (TextView) view.findViewById(R.id.tv_kitchen_fridge);
+        ovenText = (TextView) view.findViewById(R.id.tv_kitchen_oven);
+
+        lightPowerBtn(lightButton);
+        fridgePowerBtn(fridgeButton);
+        ovenPowerBtn(ovenButton);
+
+        return view;
     }
+
+
+    private boolean lightChecked = true;
+    private void lightPowerBtn(ImageView lightButton) {
+        lightButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (lightChecked == true) {
+                    lightButton.setImageResource(R.drawable.ic_light);
+                    lightChecked = false;
+                } else {
+                    lightButton.setImageResource(R.drawable.ic_light_off);
+                    lightChecked = true;
+                }
+            }
+        });
+    }
+
+    private boolean fridgeChecked = true;
+    private void fridgePowerBtn(ImageView fridgeButton) {
+        fridgeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (fridgeChecked == true) {
+                    fridgeButton.setImageResource(R.drawable.ic_on);
+                    fridgeText.setText("ON");
+                    fridgeChecked = false;
+                } else {
+                    fridgeButton.setImageResource(R.drawable.ic_off);
+                    fridgeText.setText("OFF");
+                    fridgeChecked = true;
+                }
+            }
+        });
+    }
+
+    private boolean ovenChecked = true;
+    private void ovenPowerBtn(ImageView ovenButton) {
+        ovenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (ovenChecked == true) {
+                    ovenButton.setImageResource(R.drawable.ic_on);
+                    ovenText.setText("ON");
+                    ovenChecked = false;
+                } else {
+                    ovenButton.setImageResource(R.drawable.ic_off);
+                    ovenText.setText("OFF");
+                    ovenChecked = true;
+                }
+            }
+        });
+    }
+
 }
