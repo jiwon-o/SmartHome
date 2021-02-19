@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingTop="10dp"
     android:paddingBottom="10dp">
 
@@ -24,11 +24,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-medium"
-        android:textStyle="normal"
-        android:textSize="18sp"
-        android:textColor="#000000"
         android:lineSpacingExtra="4sp"
         android:text="Light"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -37,10 +37,10 @@
         android:id="@+id/linearLayout4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="40dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout13"
         app:layout_constraintTop_toBottomOf="@+id/textView3">
 
         <ImageView
@@ -55,264 +55,301 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
-            android:textStyle="normal"
-            android:textSize="14sp"
-            android:textColor="#000000"
             android:lineSpacingExtra="3sp"
-            android:text="Energy Consumption (Today)" />
-
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_semibold"
-            android:textStyle="normal"
-            android:textSize="15sp"
+            android:text="Energy Usage (Today)"
             android:textColor="#000000"
-            android:lineSpacingExtra="4sp"
-            android:text="10.2 kw" />
+            android:textSize="14sp"
+            android:textStyle="normal" />
+
+
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout5"
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_width="0dp"
         android:layout_marginTop="40dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout6"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout6"
+        android:fontFamily="@font/montserrat_semibold"
+        android:lineSpacingExtra="4sp"
+        android:text="10.2 kw"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout13"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
-        <TextView
-            android:id="@+id/textView16"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:lineSpacingExtra="3sp"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="normal"
-            android:text="Main Light" />
+            android:orientation="horizontal">
 
-        <Switch
-            android:id="@+id/switch1"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:text="Main Light"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <Switch
+                android:id="@+id/switch_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:thumb="@drawable/switch_thumb_selector"
+                android:track="@drawable/switch_track_selector" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout6"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <SeekBar
+                android:id="@+id/seekBar_main"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:progress="70"
+                android:progressDrawable="@drawable/seekbar_seekbar1"
+                android:thumb="@drawable/seekbar_seekbar1_thumb" />
+
+            <TextView
+                android:id="@+id/txtValue_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="right"
+                android:lines="1"
+                android:text="70%"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:text="Light #1"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:thumb="@drawable/switch_thumb_selector"
+                android:track="@drawable/switch_track_selector" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <SeekBar
+                android:id="@+id/seekBar1"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:progress="55"
+                android:progressDrawable="@drawable/seekbar_seekbar1"
+                android:thumb="@drawable/seekbar_seekbar1_thumb" />
+
+            <TextView
+                android:id="@+id/txtValue1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="right"
+                android:lines="1"
+                android:text="55%"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:text="Light #2"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <Switch
+                android:id="@+id/switch2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:thumb="@drawable/switch_thumb_selector"
+                android:track="@drawable/switch_track_selector" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout9">
+
+            <SeekBar
+                android:id="@+id/seekBar2"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:progress="30"
+                android:progressDrawable="@drawable/seekbar_seekbar1"
+                android:thumb="@drawable/seekbar_seekbar1_thumb" />
+
+            <TextView
+                android:id="@+id/txtValue2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="right"
+                android:text="30%"
+                android:lines="1"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:text="Light #3"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <Switch
+                android:id="@+id/switch3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:thumb="@drawable/switch_thumb_selector"
+                android:track="@drawable/switch_track_selector" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <SeekBar
+                android:id="@+id/seekBar3"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:progress="30"
+                android:progressDrawable="@drawable/seekbar_seekbar1"
+                android:thumb="@drawable/seekbar_seekbar1_thumb" />
+
+            <TextView
+                android:id="@+id/txtValue3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="right"
+                android:text="30%"
+                android:lines="1"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+        </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
-
-        <SeekBar
-            android:progress="5"
-            android:max="10"
-            android:thumb="@drawable/seekbar_seekbar1_thumb"
-            android:progressDrawable="@drawable/seekbar_seekbar1"
-            android:layout_width="240dp"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_semibold"
-            android:textStyle="normal"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:lineSpacingExtra="3sp"
-            android:text="70%" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout7"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout8"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout8"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
-
-        <TextView
-            android:id="@+id/textView18"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:lineSpacingExtra="3sp"
-            android:text="Light #1"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="normal" />
-
-        <Switch
-            android:id="@+id/switch2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
-
-        <SeekBar
-            android:progress="5"
-            android:max="10"
-            android:thumb="@drawable/seekbar_seekbar1_thumb"
-            android:progressDrawable="@drawable/seekbar_seekbar1"
-            android:layout_width="240dp"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/textView19"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_semibold"
-            android:textStyle="normal"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:lineSpacingExtra="3sp"
-            android:text="55%" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout9"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout10"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout10"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
-
-        <TextView
-            android:id="@+id/textView20"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:lineSpacingExtra="3sp"
-            android:text="Light #2"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="normal" />
-
-        <Switch
-            android:id="@+id/switch3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout9">
-
-        <SeekBar
-            android:progress="5"
-            android:max="10"
-            android:thumb="@drawable/seekbar_seekbar1_thumb"
-            android:progressDrawable="@drawable/seekbar_seekbar1"
-            android:layout_width="240dp"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/textView21"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_semibold"
-            android:textStyle="normal"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:lineSpacingExtra="3sp"
-            android:text="30%" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout11"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout12"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout12"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout10">
-
-        <TextView
-            android:id="@+id/textView22"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:lineSpacingExtra="3sp"
-            android:text="Light #3"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="normal" />
-
-        <Switch
-            android:id="@+id/switch4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout11">
-
-        <SeekBar
-            android:progress="5"
-            android:max="10"
-            android:thumb="@drawable/seekbar_seekbar1_thumb"
-            android:progressDrawable="@drawable/seekbar_seekbar1"
-            android:layout_width="240dp"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/textView23"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_semibold"
-            android:textStyle="normal"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:lineSpacingExtra="3sp"
-            android:text="30%" />
-    </LinearLayout>
-
-    <ImageView
-        android:id="@+id/imageView5"
+    <ToggleButton
+        android:id="@+id/btn_light"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_on_big" />
+        android:background="@drawable/light_btn_selector"
+        android:checked="true"
+        android:textOn=""
+        android:textOff=""/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

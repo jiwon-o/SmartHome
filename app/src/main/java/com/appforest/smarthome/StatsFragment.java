@@ -8,8 +8,6 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
@@ -262,7 +260,7 @@ public class StatsFragment extends Fragment {
             // set color of filled area
             if (Utils.getSDKInt() >= 18) {
                 // drawables only supported on api level 18 and above
-                Drawable drawable = ContextCompat.getDrawable(getContext(), R.drawable.fade_red);
+                Drawable drawable = ContextCompat.getDrawable(getContext(), R.drawable.fade_yellow);
                 set1.setFillDrawable(drawable);
             } else {
                 set1.setFillColor(Color.BLACK);
