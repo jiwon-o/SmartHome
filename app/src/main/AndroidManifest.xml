@@ -19,6 +19,8 @@
 
         <activity android:name=".LightActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".TempActivity"
+            android:screenOrientation="portrait" />
 
     </application>
 

@@ -15,4 +15,5 @@
     <color name="background_on">#FFFFFFFF</color>
     <color name="background_off">#FFF0F0F0</color>
     <color name="checking">#FFFFE9BE</color>
+    <color name="warm_grey">#FF9E9E9E</color>
 </resources>

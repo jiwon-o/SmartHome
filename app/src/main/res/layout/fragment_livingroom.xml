@@ -33,8 +33,7 @@
                     android:layout_weight="2"
                     app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="5dp"
-                    app:cardElevation="0dp"
-                    >
+                    app:cardElevation="0dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -79,21 +78,21 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_temp"
                     android:layout_width="0dp"
                     android:layout_height="104dp"
                     android:layout_marginLeft="12dp"
                     android:layout_weight="1"
                     app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="5dp"
-                    app:cardElevation="0dp"
-                    >
+                    app:cardElevation="0dp">
 
                     <LinearLayout
+
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:orientation="vertical"
-                        >
+                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -183,8 +182,8 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-medium"
                             android:layout_marginLeft="8dp"
+                            android:fontFamily="sans-serif-medium"
                             android:text="TV"
                             android:textColor="#000000"
                             android:textSize="16sp"
@@ -218,8 +217,8 @@
                     android:id="@+id/background_livingroom_aircon"
                     android:layout_width="0dp"
                     android:layout_height="112dp"
-                    android:layout_weight="1"
                     android:layout_marginLeft="12dp"
+                    android:layout_weight="1"
                     app:cardBackgroundColor="@color/checking"
                     app:cardCornerRadius="5dp"
                     app:cardElevation="0dp">
@@ -230,13 +229,12 @@
                         android:layout_height="match_parent">
 
 
-
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
-                            android:orientation="vertical"
                             android:layout_marginLeft="18dp"
+                            android:orientation="vertical"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
@@ -274,9 +272,9 @@
                             android:id="@+id/iv_check"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/img_check"
                             android:layout_marginLeft="12dp"
                             android:layout_marginTop="18dp"
+                            android:src="@drawable/img_check"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -285,13 +283,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="right"
-                            android:src="@drawable/ic_on"
                             android:layout_marginTop="16dp"
                             android:layout_marginRight="16dp"
+                            android:src="@drawable/ic_on"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
                 </androidx.cardview.widget.CardView>
@@ -338,8 +335,8 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-medium"
                             android:layout_marginLeft="8dp"
+                            android:fontFamily="sans-serif-medium"
                             android:text="Speaker"
                             android:textColor="#000000"
                             android:textSize="16sp"
@@ -373,19 +370,19 @@
                     android:id="@+id/btn_plus"
                     android:layout_width="0dp"
                     android:layout_height="112dp"
+                    android:layout_marginLeft="12dp"
                     android:layout_weight="1"
                     app:cardBackgroundColor="@color/transparency"
-                    app:strokeColor="@color/gray"
-                    app:strokeWidth="1dp"
-                    android:layout_marginLeft="12dp"
                     app:cardCornerRadius="5dp"
-                    app:cardElevation="0dp">
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/gray"
+                    app:strokeWidth="1dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_plus"/>
+                        android:src="@drawable/ic_plus" />
 
 
                 </com.google.android.material.card.MaterialCardView>
@@ -394,11 +391,12 @@
         </TableRow>
 
         <LinearLayout
-            android:paddingBottom="8dp"
-            android:orientation="horizontal"
-            android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp">
+
             <TextView
                 android:id="@+id/txtResult"
                 android:layout_width="wrap_content"

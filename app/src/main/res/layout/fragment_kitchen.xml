@@ -32,10 +32,10 @@
                     android:layout_weight="2"
                     app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="5dp"
-                    app:cardElevation="0dp"
-                    >
+                    app:cardElevation="0dp">
 
                     <LinearLayout
+                        android:id="@+id/btn_light"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
@@ -78,21 +78,21 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_temp"
                     android:layout_width="0dp"
                     android:layout_height="104dp"
                     android:layout_marginLeft="12dp"
                     android:layout_weight="1"
                     app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="5dp"
-                    app:cardElevation="0dp"
-                    >
+                    app:cardElevation="0dp">
 
                     <LinearLayout
+
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:orientation="vertical"
-                        >
+                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -182,8 +182,8 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-medium"
                             android:layout_marginLeft="8dp"
+                            android:fontFamily="sans-serif-medium"
                             android:text="Fridge"
                             android:textColor="#000000"
                             android:textSize="16sp"
@@ -217,8 +217,8 @@
                     android:id="@+id/background_kitchen_oven"
                     android:layout_width="0dp"
                     android:layout_height="112dp"
-                    android:layout_weight="1"
                     android:layout_marginLeft="12dp"
+                    android:layout_weight="1"
                     app:cardBackgroundColor="@color/background_off"
                     app:cardCornerRadius="5dp"
                     app:cardElevation="0dp">
@@ -241,8 +241,8 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-medium"
                             android:layout_marginLeft="8dp"
+                            android:fontFamily="sans-serif-medium"
                             android:text="Oven"
                             android:textColor="#000000"
                             android:textSize="16sp"
@@ -293,16 +293,16 @@
                     android:layout_height="112dp"
                     android:layout_weight="1"
                     app:cardBackgroundColor="@color/transparency"
-                    app:strokeColor="@color/gray"
-                    app:strokeWidth="1dp"
                     app:cardCornerRadius="5dp"
-                    app:cardElevation="0dp">
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/gray"
+                    app:strokeWidth="1dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_plus"/>
+                        android:src="@drawable/ic_plus" />
 
 
                 </com.google.android.material.card.MaterialCardView>

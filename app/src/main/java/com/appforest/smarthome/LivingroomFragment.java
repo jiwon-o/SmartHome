@@ -48,6 +48,7 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
     private ImageView checkingImage;
 
     FrameLayout frameLayoutLight;
+    FrameLayout frameLayoutTemp;
 
     Intent intent;
 
@@ -123,11 +124,20 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
         CardView open = (CardView) view.findViewById(R.id.btn_plus);
         open.setOnClickListener(this);
 
-        frameLayoutLight = (FrameLayout) view.findViewById(R.id.btn_light);
+        frameLayoutLight = (CardView) view.findViewById(R.id.btn_light);
         frameLayoutLight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 intent = new Intent(getActivity(), LightActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        frameLayoutTemp = (CardView) view.findViewById(R.id.btn_temp);
+        frameLayoutTemp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(getActivity(), TempActivity.class);
                 startActivity(intent);
             }
         });
