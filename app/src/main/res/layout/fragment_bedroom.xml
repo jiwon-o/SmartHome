@@ -163,7 +163,7 @@
                     android:layout_width="0dp"
                     android:layout_height="112dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/background_on"
+                    app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="5dp"
                     app:cardElevation="0dp">
 
@@ -222,7 +222,7 @@
                     android:layout_height="112dp"
                     android:layout_weight="1"
                     android:layout_marginLeft="12dp"
-                    app:cardBackgroundColor="@color/background_off"
+                    app:cardBackgroundColor="@color/gray"
                     app:cardCornerRadius="5dp"
                     app:cardElevation="0dp">
 
@@ -295,7 +295,7 @@
                     android:layout_width="0dp"
                     android:layout_height="112dp"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/background_off"
+                    app:cardBackgroundColor="@color/gray"
                     app:cardCornerRadius="5dp"
                     app:cardElevation="0dp">
 

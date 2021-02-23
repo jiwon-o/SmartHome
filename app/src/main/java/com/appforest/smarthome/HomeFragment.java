@@ -78,11 +78,11 @@ public class HomeFragment extends Fragment {
         movieImage = (ImageView) view.findViewById(R.id.iv_movie);
 
 
-        inhomeButton(inhomeImage);
-        goingoutButton(goingoutImage);
-        nightButton(nightImage);
-        partyButton(partyImage);
-        movieButton(movieImage);
+        ClickInhomeButton(inhomeImage);
+        ClickGoingoutButton(goingoutImage);
+        ClickNightButton(nightImage);
+        ClickPartyButton(partyImage);
+        ClickMovieButton(movieImage);
 
 
         TabLayout tabLayout = view.findViewById(R.id.tab_layout_data);
@@ -131,7 +131,7 @@ public class HomeFragment extends Fragment {
     private boolean movieChecked = true;
 
 
-    private void inhomeButton(ImageView inhomeImage) {
+    private void ClickInhomeButton(ImageView inhomeImage) {
         inhomeImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -155,7 +155,7 @@ public class HomeFragment extends Fragment {
     }
 
 
-    private void goingoutButton(ImageView goingoutImage) {
+    private void ClickGoingoutButton(ImageView goingoutImage) {
         goingoutImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -179,7 +179,7 @@ public class HomeFragment extends Fragment {
     }
 
 
-    private void nightButton(ImageView nightImage) {
+    private void ClickNightButton(ImageView nightImage) {
         nightImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -203,7 +203,7 @@ public class HomeFragment extends Fragment {
     }
 
 
-    private void partyButton(ImageView partyImage) {
+    private void ClickPartyButton(ImageView partyImage) {
         partyImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -227,7 +227,7 @@ public class HomeFragment extends Fragment {
     }
 
 
-    private void movieButton(ImageView movieImage) {
+    private void ClickMovieButton(ImageView movieImage) {
         movieImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

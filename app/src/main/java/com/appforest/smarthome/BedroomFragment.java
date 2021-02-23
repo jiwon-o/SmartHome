@@ -127,12 +127,12 @@ public class BedroomFragment extends Fragment implements View.OnClickListener {
                 if (tvChecked == true) {
                     tvButton.setImageResource(R.drawable.ic_on);
                     tvText.setText("ON");
-                    tvBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_on));
+                    tvBackground.setCardBackgroundColor(getActivity().getColor(R.color.white));
                     tvChecked = false;
                 } else {
                     tvButton.setImageResource(R.drawable.ic_off);
                     tvText.setText("OFF");
-                    tvBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_off));
+                    tvBackground.setCardBackgroundColor(getActivity().getColor(R.color.gray));
                     tvChecked = true;
                 }
             }
@@ -147,12 +147,12 @@ public class BedroomFragment extends Fragment implements View.OnClickListener {
                 if (airconChecked == true) {
                     airconButton.setImageResource(R.drawable.ic_on);
                     airconText.setText("ON");
-                    airconBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_on));
+                    airconBackground.setCardBackgroundColor(getActivity().getColor(R.color.white));
                     airconChecked = false;
                 } else {
                     airconButton.setImageResource(R.drawable.ic_off);
                     airconText.setText("OFF");
-                    airconBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_off));
+                    airconBackground.setCardBackgroundColor(getActivity().getColor(R.color.gray));
                     airconChecked = true;
                 }
             }
@@ -167,12 +167,12 @@ public class BedroomFragment extends Fragment implements View.OnClickListener {
                 if (fanChecked == true) {
                     fanButton.setImageResource(R.drawable.ic_on);
                     fanText.setText("ON");
-                    fanBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_on));
+                    fanBackground.setCardBackgroundColor(getActivity().getColor(R.color.white));
                     fanChecked = false;
                 } else {
                     fanButton.setImageResource(R.drawable.ic_off);
                     fanText.setText("OFF");
-                    fanBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_off));
+                    fanBackground.setCardBackgroundColor(getActivity().getColor(R.color.gray));
                     fanChecked = true;
                 }
             }

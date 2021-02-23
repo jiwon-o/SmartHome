@@ -120,12 +120,12 @@ public class KitchenFragment extends Fragment implements View.OnClickListener {
                 if (fridgeChecked == true) {
                     fridgeButton.setImageResource(R.drawable.ic_on);
                     fridgeText.setText("ON");
-                    fridgeBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_on));
+                    fridgeBackground.setCardBackgroundColor(getActivity().getColor(R.color.white));
                     fridgeChecked = false;
                 } else {
                     fridgeButton.setImageResource(R.drawable.ic_off);
                     fridgeText.setText("OFF");
-                    fridgeBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_off));
+                    fridgeBackground.setCardBackgroundColor(getActivity().getColor(R.color.gray));
                     fridgeChecked = true;
                 }
             }
@@ -140,12 +140,12 @@ public class KitchenFragment extends Fragment implements View.OnClickListener {
                 if (ovenChecked == true) {
                     ovenButton.setImageResource(R.drawable.ic_on);
                     ovenText.setText("ON");
-                    ovenBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_on));
+                    ovenBackground.setCardBackgroundColor(getActivity().getColor(R.color.white));
                     ovenChecked = false;
                 } else {
                     ovenButton.setImageResource(R.drawable.ic_off);
                     ovenText.setText("OFF");
-                    ovenBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_off));
+                    ovenBackground.setCardBackgroundColor(getActivity().getColor(R.color.gray));
                     ovenChecked = true;
                 }
             }

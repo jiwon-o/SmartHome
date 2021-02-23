@@ -177,12 +177,12 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
                 if (tvChecked == true) {
                     tvButton.setImageResource(R.drawable.ic_on);
                     tvText.setText("ON");
-                    tvBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_on));
+                    tvBackground.setCardBackgroundColor(getActivity().getColor(R.color.white));
                     tvChecked = false;
                 } else {
                     tvButton.setImageResource(R.drawable.ic_off);
                     tvText.setText("OFF");
-                    tvBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_off));
+                    tvBackground.setCardBackgroundColor(getActivity().getColor(R.color.gray));
 
                     tvChecked = true;
                 }
@@ -198,12 +198,12 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
                 if (airconChecked == true) {
                     airconButton.setImageResource(R.drawable.ic_on);
                     airconText.setText("ON");
-                    airconBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_on));
+                    airconBackground.setCardBackgroundColor(getActivity().getColor(R.color.white));
                     airconChecked = false;
                 } else {
                     airconButton.setImageResource(R.drawable.ic_off);
                     airconText.setText("OFF");
-                    airconBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_off));
+                    airconBackground.setCardBackgroundColor(getActivity().getColor(R.color.gray));
                     airconChecked = true;
                 }
             }
@@ -218,12 +218,12 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
                 if (speakerChecked == true) {
                     speakerButton.setImageResource(R.drawable.ic_on);
                     speakerText.setText("Playing");
-                    speakerBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_on));
+                    speakerBackground.setCardBackgroundColor(getActivity().getColor(R.color.white));
                     speakerChecked = false;
                 } else {
                     speakerButton.setImageResource(R.drawable.ic_off);
                     speakerText.setText("OFF");
-                    speakerBackground.setCardBackgroundColor(getActivity().getColor(R.color.background_off));
+                    speakerBackground.setCardBackgroundColor(getActivity().getColor(R.color.gray));
                     speakerChecked = true;
                 }
             }
