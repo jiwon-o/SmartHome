@@ -62,7 +62,7 @@
                                 android:fontFamily="@font/montserrat_bold"
                                 android:text="80%"
                                 android:textColor="#000000"
-                                android:textSize="26sp"
+                                android:textSize="24sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -116,7 +116,7 @@
                                 android:fontFamily="@font/montserrat_bold"
                                 android:text="65"
                                 android:textColor="#000000"
-                                android:textSize="21sp"
+                                android:textSize="20sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -125,7 +125,7 @@
                                 android:fontFamily="@font/montserrat_semibold"
                                 android:text="℉"
                                 android:textColor="#000000"
-                                android:textSize="21sp" />
+                                android:textSize="20sp" />
 
                         </LinearLayout>
 

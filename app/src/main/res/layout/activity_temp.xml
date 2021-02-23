@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp">
+    android:background="@color/background_white"
+    android:fillViewport="true"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+
 
     <ImageView
         android:id="@+id/image_back"
@@ -89,143 +98,146 @@
     </LinearLayout>
 
 
-    <LinearLayout
-        android:id="@+id/linearLayout15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="40dp"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout14">
-
-        <TextView
-            android:id="@+id/textView12"
+        <LinearLayout
+            android:id="@+id/linearLayout15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:lineSpacingExtra="3sp"
-            android:text="Current Temp"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="normal" />
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="32dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout19"
+            app:layout_constraintHorizontal_bias="0.016"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout14">
 
-        <TextView
-            android:id="@+id/textView13"
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:lineSpacingExtra="3sp"
+                android:text="Current Temp"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_semibold"
+                android:lineSpacingExtra="6sp"
+                android:text="82℉"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout19"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_semibold"
-            android:lineSpacingExtra="6sp"
-            android:text="82℉"
-            android:textColor="#000000"
-            android:textSize="26sp"
-            android:textStyle="normal" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="48dp"
-        android:gravity="end"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout14">
-
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:text="Current Humidity"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="normal" />
-
-        <TextView
-            android:id="@+id/textView19"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_semibold"
-            android:text="45%"
-            android:textColor="#000000"
-            android:textSize="26sp"
-            android:textStyle="normal" />
-    </LinearLayout>
-
-    <RadioGroup
-        android:id="@+id/radioGroup2"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/btn_unchecked"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout15">
-
-        <androidx.appcompat.widget.AppCompatRadioButton
-            android:id="@+id/domeOffButton"
-            android:layout_width="72dp"
-            android:layout_height="32dp"
-            android:layout_weight="1"
-            android:background="@drawable/btn_selector"
-            android:button="@color/white"
-            android:checked="true"
-            android:fontFamily="sans-serif-medium"
-            android:gravity="center"
-            android:text="Cooling"
-            android:textColor="@drawable/btn_text_color"
-            android:textSize="14sp"
-            android:textStyle="normal" />
-
-        <androidx.appcompat.widget.AppCompatRadioButton
-            android:layout_width="72dp"
-            android:layout_height="32dp"
-            android:layout_weight="1"
-            android:background="@drawable/btn_selector"
-            android:button="@color/white"
-            android:fontFamily="sans-serif-medium"
-            android:gravity="center"
-            android:text="Heating"
-            android:textColor="@drawable/btn_text_color"
-            android:textSize="14sp"
-            android:textStyle="normal"
-
-            />
-
-    </RadioGroup>
-
-    <LinearLayout
-        android:id="@+id/linearLayout16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup2">
-
-        <TextView
-            android:id="@+id/temperature_Number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_semibold"
-            android:textColor="#000000"
-            android:textSize="40sp"
-            android:textStyle="normal"
-            tools:text="" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_semibold"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="48dp"
             android:gravity="end"
-            android:text="℉"
-            android:textColor="#000000"
-            android:textSize="40sp"
-            android:textStyle="normal" />
-    </LinearLayout>
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout14">
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="Current Humidity"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="45%"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/radioGroup2"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/btn_unchecked"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout15">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/domeOffButton"
+                android:layout_width="72dp"
+                android:layout_height="32dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_selector"
+                android:button="@color/white"
+                android:checked="true"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="Cooling"
+                android:textColor="@drawable/btn_text_color"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:layout_width="72dp"
+                android:layout_height="32dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_selector"
+                android:button="@color/white"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="Heating"
+                android:textColor="@drawable/btn_text_color"
+                android:textSize="14sp"
+                android:textStyle="normal"
+
+                />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/linearLayout16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup2">
+
+            <TextView
+                android:id="@+id/temperature_Number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="normal"
+                tools:text="" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="end"
+                android:text="℉"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                android:textStyle="normal" />
+        </LinearLayout>
 
     <TextView
         android:id="@+id/textView21"
@@ -240,18 +252,18 @@
         app:layout_constraintStart_toStartOf="@+id/linearLayout15"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout16" />
 
-    <SeekBar
-        android:id="@+id/seekBar_main"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:max="100"
-        android:progress="70"
-        android:progressDrawable="@drawable/seekbar_seekbar1"
-        android:thumb="@drawable/seekbar_seekbar1_thumb"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+        <SeekBar
+            android:id="@+id/seekBar_main"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:max="100"
+            android:progress="70"
+            android:progressDrawable="@drawable/seekbar_seekbar1"
+            android:thumb="@drawable/seekbar_seekbar1_thumb"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
     <TextView
         android:id="@+id/textView23"
@@ -266,114 +278,62 @@
         app:layout_constraintStart_toStartOf="@+id/textView21"
         app:layout_constraintTop_toBottomOf="@+id/seekBar_main" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView23">
-
-        <FrameLayout
-            android:id="@+id/temperature_auto_frame"
+        <LinearLayout
+            android:id="@+id/linearLayout17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="modeClick">
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView23">
+
 
             <ImageView
-                android:id="@+id/temperature_auto_btn"
+                android:id="@+id/img_temp_auto_unclick"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                />
-
+                android:layout_weight="1"
+                app:srcCompat="@drawable/btn_temp_mode_auto_unclick" />
 
             <ImageView
-                android:id="@+id/img_auto"
+                android:id="@+id/img_temp_sleep_unclick"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center" />
-
-            <TextView
-                android:id="@+id/tv_auto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|bottom"
-                android:layout_marginBottom="33dp"
-                android:letterSpacing="0.02"
-                android:lineSpacingExtra="1sp"
-                android:text="Auto"
-                android:textSize="14sp"
-                android:textStyle="normal" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/temperature_cool_frame"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:onClick="modeClick">
+                android:layout_weight="1"
+                android:layout_marginLeft="8dp"
+                app:srcCompat="@drawable/btn_temp_mode_sleep_unclick" />
 
             <ImageView
-                android:id="@+id/temperature_cool_btn"
+                android:id="@+id/img_temp_cool_unclick"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                />
+                android:layout_weight="1"
+                android:layout_marginLeft="8dp"
+                app:srcCompat="@drawable/btn_temp_mode_cool_unclick" />
 
             <ImageView
-                android:id="@+id/img_cool"
+                android:id="@+id/img_temp_hot_unclick"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                />
+                android:layout_weight="1"
+                android:layout_marginLeft="8dp"
+                app:srcCompat="@drawable/btn_temp_mode_hot_unclick" />
+        </LinearLayout>
 
-            <TextView
-                android:id="@+id/tv_cool"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|bottom"
-                android:layout_marginBottom="33dp"
-                android:letterSpacing="0.02"
-                android:lineSpacingExtra="1sp"
-                android:text="Cool"
-                android:textColor="#ffffff"
-                android:textSize="14sp"
-                android:textStyle="normal" />
-        </FrameLayout>
+        <ToggleButton
+            android:id="@+id/btn_temp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/light_btn_selector"
+            android:checked="true"
+            android:textOn=""
+            android:textOff=""/>
 
-        <FrameLayout
-            android:id="@+id/temperature_dry_frame"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:onClick="modeClick">
-
-            <ImageView
-                android:id="@+id/temperature_dry_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <ImageView
-                android:id="@+id/img_dry"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                />
-
-            <TextView
-                android:id="@+id/tv_dry"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|bottom"
-                android:layout_marginBottom="33dp"
-                android:letterSpacing="0.02"
-                android:lineSpacingExtra="1sp"
-                android:text="Dry"
-                android:textSize="14sp"
-                android:textStyle="normal" />
-
-        </FrameLayout>
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
