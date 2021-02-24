@@ -26,7 +26,7 @@ public class TempActivity extends AppCompatActivity {
     private ImageView coolButton;
     private ImageView hotButton;
 
-    boolean tempChecked = false;
+    private boolean tempChecked = true;
     private int count = 70;
 
 
@@ -59,17 +59,32 @@ public class TempActivity extends AppCompatActivity {
         coolButton = (ImageView) findViewById(R.id.img_temp_cool_unclick);
         hotButton = (ImageView) findViewById(R.id.img_temp_hot_unclick);
 
-        ClickAutoButton(autoButton);
-        ClickSleepButton(sleepButton);
-        ClickCoolButton(coolButton);
-        ClickHotButton(hotButton);
-        temperatureButton(tempPowerButton);
+        clickAutoButton(autoButton);
+        clickSleepButton(sleepButton);
+        clickCoolButton(coolButton);
+        clickHotButton(hotButton);
 
-        upDownButton upDownButton = new upDownButton();
+        PlusMinusButton plusMinusButton = new PlusMinusButton();
         temperatureNum.setText(count + "");
-        plusButton.setOnClickListener(upDownButton);
-        minusButton.setOnClickListener(upDownButton);
+        plusButton.setOnClickListener(plusMinusButton);
+        minusButton.setOnClickListener(plusMinusButton);
 
+        tempPowerButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                tempChecked = !tempChecked;
+
+                if (tempChecked) {
+                    tempPowerButton.setBackgroundResource(R.drawable.ic_on_big);
+
+                } else {
+                    tempPowerButton.setBackgroundResource(R.drawable.ic_off_big);
+
+                }
+            }
+        });
     }
 
     //Toast when pressing the temperature button without turning on the power
@@ -77,13 +92,13 @@ public class TempActivity extends AppCompatActivity {
         TextView view = new TextView(context);
         view.setBackgroundResource(R.color.background_white);
 
-        final Toast toast = Toast.makeText(context, "Please, turn on the A/C first.", Toast.LENGTH_SHORT);
+        final Toast toast = Toast.makeText(context, "Please, turn on the power first.", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER, Gravity.CENTER_HORIZONTAL, Gravity.CENTER_VERTICAL);
         toast.show();
     }
 
     //You can control the number of temperatures
-    class upDownButton implements View.OnClickListener {
+    class PlusMinusButton implements View.OnClickListener {
         @Override
         public void onClick(View v) {
             if (tempChecked == true) {//When you click Climate On/Off button
@@ -115,112 +130,90 @@ public class TempActivity extends AppCompatActivity {
         }
     }
 
-    //Climate On/Off button
-    private void temperatureButton(ToggleButton tempPowerButton) {
-        tempPowerButton.setOnClickListener(new View.OnClickListener() {
 
+    private boolean autoChecked = false;
+    private boolean sleepChecked = false;
+    private boolean coolChecked = false;
+    private boolean hotChecked = false;
+
+    private void clickAutoButton(ImageView autoButton) {
+        autoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (tempChecked == true) {
-                    tempChecked = false;
-                } else {
-
-                    autoButton.setImageResource(R.drawable.btn_temp_mode_auto_unclick);
-                    sleepButton.setImageResource(R.drawable.btn_temp_mode_sleep_unclick);
-                    coolButton.setImageResource(R.drawable.btn_temp_mode_cool_unclick);
-                    hotButton.setImageResource(R.drawable.btn_temp_mode_hot_unclick);
-
-                    tempChecked = true;
-                }
-
-            }
-        });
-    }
-
-    private boolean autoChecked = true;
-    private boolean sleepChecked = true;
-    private boolean coolChecked = true;
-    private boolean hotChecked = true;
-
-    private void ClickAutoButton(ImageView inhomeImage) {
-        inhomeImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (autoChecked == true) {
+                autoChecked = !autoChecked;
+                if (autoChecked) {
                     autoButton.setImageResource(R.drawable.btn_temp_mode_auto_click);
                     sleepButton.setImageResource(R.drawable.btn_temp_mode_sleep_unclick);
                     coolButton.setImageResource(R.drawable.btn_temp_mode_cool_unclick);
                     hotButton.setImageResource(R.drawable.btn_temp_mode_hot_unclick);
-                    autoChecked = false;
-                    sleepChecked = true;
-                    coolChecked = true;
-                    hotChecked = true;
+
+                    sleepChecked = false;
+                    coolChecked = false;
+                    hotChecked = false;
                 } else {
                     autoButton.setImageResource(R.drawable.btn_temp_mode_auto_unclick);
-                    autoChecked = true;
                 }
             }
         });
     }
 
-    private void ClickSleepButton(ImageView inhomeImage) {
-        inhomeImage.setOnClickListener(new View.OnClickListener() {
+    private void clickSleepButton(ImageView sleepButton) {
+        sleepButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (sleepChecked == true) {
+                sleepChecked = !sleepChecked;
+                if (sleepChecked) {
                     autoButton.setImageResource(R.drawable.btn_temp_mode_auto_unclick);
                     sleepButton.setImageResource(R.drawable.btn_temp_mode_sleep_click);
                     coolButton.setImageResource(R.drawable.btn_temp_mode_cool_unclick);
                     hotButton.setImageResource(R.drawable.btn_temp_mode_hot_unclick);
-                    autoChecked = true;
-                    sleepChecked = false;
-                    coolChecked = true;
-                    hotChecked = true;
+                    autoChecked = false;
+
+                    coolChecked = false;
+                    hotChecked = false;
                 } else {
                     sleepButton.setImageResource(R.drawable.btn_temp_mode_sleep_unclick);
-                    sleepChecked = true;
                 }
             }
         });
     }
 
-    private void ClickCoolButton(ImageView inhomeImage) {
-        inhomeImage.setOnClickListener(new View.OnClickListener() {
+    private void clickCoolButton(ImageView coolButton) {
+        coolButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (coolChecked == true) {
+                coolChecked = !coolChecked;
+                if (coolChecked) {
                     autoButton.setImageResource(R.drawable.btn_temp_mode_auto_unclick);
                     sleepButton.setImageResource(R.drawable.btn_temp_mode_sleep_unclick);
                     coolButton.setImageResource(R.drawable.btn_temp_mode_cool_click);
                     hotButton.setImageResource(R.drawable.btn_temp_mode_hot_unclick);
-                    autoChecked = true;
-                    sleepChecked = true;
-                    coolChecked = false;
-                    hotChecked = true;
+                    autoChecked = false;
+                    sleepChecked = false;
+                    hotChecked = false;
                 } else {
                     coolButton.setImageResource(R.drawable.btn_temp_mode_cool_unclick);
-                    coolChecked = true;
                 }
             }
         });
     }
 
-    private void ClickHotButton(ImageView inhomeImage) {
-        inhomeImage.setOnClickListener(new View.OnClickListener() {
+    private void clickHotButton(ImageView hotButton) {
+        hotButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (hotChecked == true) {
+                hotChecked = !hotChecked;
+                if (hotChecked) {
                     autoButton.setImageResource(R.drawable.btn_temp_mode_auto_unclick);
                     sleepButton.setImageResource(R.drawable.btn_temp_mode_sleep_unclick);
                     coolButton.setImageResource(R.drawable.btn_temp_mode_cool_unclick);
                     hotButton.setImageResource(R.drawable.btn_temp_mode_hot_click);
-                    autoChecked = true;
-                    sleepChecked = true;
-                    coolChecked = true;
-                    hotChecked = false;
+                    autoChecked = false;
+                    sleepChecked = false;
+                    coolChecked = false;
                 } else {
                     hotButton.setImageResource(R.drawable.btn_temp_mode_hot_unclick);
-                    hotChecked = true;
+
                 }
             }
         });

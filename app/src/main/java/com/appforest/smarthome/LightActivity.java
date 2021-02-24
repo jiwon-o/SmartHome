@@ -19,7 +19,7 @@ import androidx.core.content.ContextCompat;
 
 public class LightActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
 
-    private ToggleButton btnLight;
+    private ToggleButton lightPowerButton;
     private ImageView backImage;
     private SeekBar seekBarMain;
     private SeekBar seekBar1;
@@ -65,8 +65,7 @@ public class LightActivity extends AppCompatActivity implements CompoundButton.O
         txtValue3 = (TextView) findViewById(R.id.txtValue3);
         seekBar3 = (SeekBar) findViewById(R.id.seekBar3);
 
-        btnLight = (ToggleButton) findViewById(R.id.btn_light);
-        btnLight.setOnCheckedChangeListener(this);
+        lightPowerButton = (ToggleButton) findViewById(R.id.btn_light);
 
 
         switchMain = (Switch) findViewById(R.id.switch_main);
@@ -147,7 +146,7 @@ public class LightActivity extends AppCompatActivity implements CompoundButton.O
         });
 
 
-        btnLight.setOnClickListener(new View.OnClickListener() {
+        lightPowerButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -155,7 +154,7 @@ public class LightActivity extends AppCompatActivity implements CompoundButton.O
                 lightChecked = !lightChecked;
 
                 if (lightChecked) {
-                    btnLight.setBackgroundResource(R.drawable.ic_on_big);
+                    lightPowerButton.setBackgroundResource(R.drawable.ic_on_big);
                     switchMain.setChecked(true);
                     switch1.setChecked(true);
                     switch2.setChecked(true);
@@ -163,7 +162,7 @@ public class LightActivity extends AppCompatActivity implements CompoundButton.O
 
 
                 } else {
-                    btnLight.setBackgroundResource(R.drawable.ic_off_big);
+                    lightPowerButton.setBackgroundResource(R.drawable.ic_off_big);
                     switchMain.setChecked(false);
                     switch1.setChecked(false);
                     switch2.setChecked(false);
@@ -182,24 +181,24 @@ public class LightActivity extends AppCompatActivity implements CompoundButton.O
         switch (buttonView.getId()) {
             case R.id.switch_main:
                 if (isChecked) {
-                    btnLight.setBackgroundResource(R.drawable.ic_on_big);
+                    lightPowerButton.setBackgroundResource(R.drawable.ic_on_big);
                     lightChecked = true;
 
                 } else {
                     if (!switch1.isChecked() && !switch2.isChecked() && !switch3.isChecked()) {
-                        btnLight.setBackgroundResource(R.drawable.ic_off_big);
+                        lightPowerButton.setBackgroundResource(R.drawable.ic_off_big);
                         lightChecked = false;
                     }
                 }
                 break;
             case R.id.switch1:
                 if (isChecked) {
-                    btnLight.setBackgroundResource(R.drawable.ic_on_big);
+                    lightPowerButton.setBackgroundResource(R.drawable.ic_on_big);
                     lightChecked = true;
 
                 } else {
                     if (!switchMain.isChecked() && !switch2.isChecked() && !switch3.isChecked()) {
-                        btnLight.setBackgroundResource(R.drawable.ic_off_big);
+                        lightPowerButton.setBackgroundResource(R.drawable.ic_off_big);
                         lightChecked = false;
                     }
                 }
@@ -207,12 +206,12 @@ public class LightActivity extends AppCompatActivity implements CompoundButton.O
 
             case R.id.switch2:
                 if (isChecked) {
-                    btnLight.setBackgroundResource(R.drawable.ic_on_big);
+                    lightPowerButton.setBackgroundResource(R.drawable.ic_on_big);
                     lightChecked = true;
 
                 } else {
                     if (!switchMain.isChecked() && !switch1.isChecked() && !switch3.isChecked()) {
-                        btnLight.setBackgroundResource(R.drawable.ic_off_big);
+                        lightPowerButton.setBackgroundResource(R.drawable.ic_off_big);
                         lightChecked = false;
                     }
                 }
@@ -220,12 +219,12 @@ public class LightActivity extends AppCompatActivity implements CompoundButton.O
 
             case R.id.switch3:
                 if (isChecked) {
-                    btnLight.setBackgroundResource(R.drawable.ic_on_big);
+                    lightPowerButton.setBackgroundResource(R.drawable.ic_on_big);
                     lightChecked = true;
 
                 } else {
                     if (!switchMain.isChecked() && !switch1.isChecked() && !switch2.isChecked()) {
-                        btnLight.setBackgroundResource(R.drawable.ic_off_big);
+                        lightPowerButton.setBackgroundResource(R.drawable.ic_off_big);
                         lightChecked = false;
                     }
                 }
