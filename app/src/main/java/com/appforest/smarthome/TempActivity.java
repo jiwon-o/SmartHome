@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -28,6 +29,8 @@ public class TempActivity extends AppCompatActivity {
 
     private boolean tempChecked = true;
     private int count = 70;
+
+    private SeekBar seekBarMain;
 
 
     @Override
@@ -68,6 +71,9 @@ public class TempActivity extends AppCompatActivity {
         temperatureNum.setText(count + "");
         plusButton.setOnClickListener(plusMinusButton);
         minusButton.setOnClickListener(plusMinusButton);
+
+        seekBarMain = (SeekBar) findViewById(R.id.seekBar_main);
+        TextView textView = (TextView) findViewById(R.id.textView);
 
         tempPowerButton.setOnClickListener(new View.OnClickListener() {
 

@@ -41,23 +41,25 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-        <LinearLayout
+        <FrameLayout
+            android:background="@drawable/background_frame"
+            android:id="@+id/frameLayout1"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:layout_marginBottom="300dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView9">
-
 
             <LinearLayout
                 android:id="@+id/linearLayout1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:orientation="horizontal">
 
 
@@ -72,32 +74,32 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
-                        android:textStyle="normal"
-                        android:textSize="15sp"
-                        android:textColor="#000000"
                         android:lineSpacingExtra="3sp"
-                        android:text="Total Usages" />
+                        android:text="Total Usages"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:textStyle="normal" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserrat_semibold"
-                        android:textStyle="normal"
                         android:layout_marginTop="8dp"
-                        android:textSize="26sp"
-                        android:textColor="#000000"
+                        android:fontFamily="@font/montserrat_semibold"
                         android:lineSpacingExtra="6sp"
-                        android:text="151 kw" />
+                        android:text="151 kw"
+                        android:textColor="#000000"
+                        android:textSize="26sp"
+                        android:textStyle="normal" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-medium"
-                        android:textStyle="normal"
-                        android:textSize="13sp"
-                        android:textColor="@color/pastel_red"
                         android:lineSpacingExtra="2sp"
-                        android:text="+ 1.0%" />
+                        android:text="+ 1.0%"
+                        android:textColor="@color/pastel_red"
+                        android:textSize="13sp"
+                        android:textStyle="normal" />
                 </LinearLayout>
 
 
@@ -105,47 +107,61 @@
                     android:id="@+id/linearLayout3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
                     android:layout_marginLeft="80dp"
+                    android:gravity="center"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
-                        android:textStyle="normal"
-                        android:textSize="15sp"
-                        android:textColor="#000000"
                         android:lineSpacingExtra="3sp"
-                        android:text="Total Cost" />
+                        android:text="Total Cost"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:textStyle="normal" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserrat_semibold"
-                        android:textStyle="normal"
                         android:layout_marginTop="8dp"
-                        android:textSize="26sp"
-                        android:textColor="#000000"
+                        android:fontFamily="@font/montserrat_semibold"
                         android:lineSpacingExtra="6sp"
-                        android:text="$170.55" />
+                        android:text="$170.5"
+                        android:textColor="#000000"
+                        android:textSize="26sp"
+                        android:textStyle="normal" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-medium"
-                        android:textStyle="normal"
-                        android:textSize="13sp"
-                        android:textColor="#5f82f1"
                         android:lineSpacingExtra="2sp"
-                        android:text="- 2.3%" />
+                        android:text="- 2.3%"
+                        android:textColor="#5f82f1"
+                        android:textSize="13sp"
+                        android:textStyle="normal" />
                 </LinearLayout>
             </LinearLayout>
 
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="300dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout1">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="24dp">
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginBottom="24dp">
 
                 <include layout="@layout/activity_linechart" />
             </LinearLayout>

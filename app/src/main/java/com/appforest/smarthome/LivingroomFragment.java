@@ -1,35 +1,20 @@
 package com.appforest.smarthome;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
-import android.media.Image;
 import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link LivingroomFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class LivingroomFragment extends Fragment implements View.OnClickListener {
 
     private ImageView lightButton;
@@ -47,50 +32,15 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
 
     private ImageView checkingImage;
 
-    FrameLayout frameLayoutLight;
-    FrameLayout frameLayoutTemp;
+    private CardView lightFrame;
+    private CardView tempFrame;
 
     Intent intent;
-
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public LivingroomFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment LivingroomFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static LivingroomFragment newInstance(String param1, String param2) {
-        LivingroomFragment fragment = new LivingroomFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
@@ -124,8 +74,8 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
         CardView open = (CardView) view.findViewById(R.id.btn_plus);
         open.setOnClickListener(this);
 
-        frameLayoutLight = (CardView) view.findViewById(R.id.btn_light);
-        frameLayoutLight.setOnClickListener(new View.OnClickListener() {
+        lightFrame = (CardView) view.findViewById(R.id.btn_light);
+        lightFrame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 intent = new Intent(getActivity(), LightActivity.class);
@@ -133,8 +83,8 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
             }
         });
 
-        frameLayoutTemp = (CardView) view.findViewById(R.id.btn_temp);
-        frameLayoutTemp.setOnClickListener(new View.OnClickListener() {
+        tempFrame = (CardView) view.findViewById(R.id.btn_temp);
+        tempFrame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 intent = new Intent(getActivity(), TempActivity.class);
@@ -182,7 +132,7 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
                 } else {
                     tvButton.setImageResource(R.drawable.ic_off);
                     tvText.setText("OFF");
-                    tvBackground.setCardBackgroundColor(getActivity().getColor(R.color.gray));
+                    tvBackground.setCardBackgroundColor(getActivity().getColor(R.color.light_gray));
 
                     tvChecked = true;
                 }
@@ -198,12 +148,12 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
                 if (airconChecked == true) {
                     airconButton.setImageResource(R.drawable.ic_on);
                     airconText.setText("ON");
-                    airconBackground.setCardBackgroundColor(getActivity().getColor(R.color.white));
+                    airconBackground.setCardBackgroundColor(getActivity().getColor(R.color.checking));
                     airconChecked = false;
                 } else {
                     airconButton.setImageResource(R.drawable.ic_off);
                     airconText.setText("OFF");
-                    airconBackground.setCardBackgroundColor(getActivity().getColor(R.color.gray));
+                    airconBackground.setCardBackgroundColor(getActivity().getColor(R.color.light_gray));
                     airconChecked = true;
                 }
             }
@@ -223,7 +173,7 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
                 } else {
                     speakerButton.setImageResource(R.drawable.ic_off);
                     speakerText.setText("OFF");
-                    speakerBackground.setCardBackgroundColor(getActivity().getColor(R.color.gray));
+                    speakerBackground.setCardBackgroundColor(getActivity().getColor(R.color.light_gray));
                     speakerChecked = true;
                 }
             }

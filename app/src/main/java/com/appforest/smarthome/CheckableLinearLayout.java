@@ -3,11 +3,9 @@ package com.appforest.smarthome;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.Checkable;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ToggleButton;
 
 class CheckableLinearLayout extends LinearLayout implements Checkable {
 
