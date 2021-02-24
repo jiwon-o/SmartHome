@@ -217,11 +217,19 @@
                 android:id="@+id/linearLayout16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:layout_marginTop="32dp"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/radioGroup2">
+
+                <ImageView
+                    android:id="@+id/btn_temp_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/ic_temp_minus"/>
 
                 <TextView
                     android:id="@+id/temperature_Number"
@@ -242,6 +250,14 @@
                     android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="normal" />
+
+                <ImageView
+                    android:id="@+id/btn_temp_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:src="@drawable/ic_temp_plus"/>
+
             </LinearLayout>
 
             <TextView
@@ -337,7 +353,7 @@
         android:layout_height="80dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
-        android:background="@drawable/light_btn_selector"
+        android:background="@drawable/btn_power_selector"
         android:checked="true"
         android:textOff=""
         android:textOn=""

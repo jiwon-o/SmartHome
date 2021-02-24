@@ -238,7 +238,7 @@
                 app:tabMode="scrollable"
                 app:tabSelectedTextColor="@color/black"
                 app:tabTextAppearance="@style/TabLayoutTextStyle"
-                app:tabTextColor="@color/gray" />
+                app:tabTextColor="@color/warm_gray" />
 
         </LinearLayout>
 
