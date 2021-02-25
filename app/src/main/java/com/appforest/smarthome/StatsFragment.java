@@ -98,7 +98,7 @@ public class StatsFragment extends Fragment {
             chart.setDrawGridBackground(false);
 
             // create marker to display box when values are selected
-            RangeMarkerView mv = new RangeMarkerView(getActivity(), R.layout.custom_marker_view);
+            UsageMarkerView mv = new UsageMarkerView(getActivity(), R.layout.custom_marker_view);
 
             // Set the marker to the chart
             mv.setChartView(chart);

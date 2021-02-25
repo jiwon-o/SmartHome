@@ -4,11 +4,13 @@ import android.os.Bundle;
 
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.DialogFragment;
+
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+// Pop-up dialog fragment
 public class FragmentDialog extends DialogFragment {
 
     @Override
@@ -26,8 +28,8 @@ public class FragmentDialog extends DialogFragment {
         Bundle args = getArguments();
         String value = args.getString("key");
 
-        getDialog().getWindow().setGravity(Gravity.BOTTOM);
-        getDialog().getWindow().setBackgroundDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.background_overview));
+        getDialog().getWindow().setGravity(Gravity.BOTTOM); // Dialog displayed at the bottom of the screen
+        getDialog().getWindow().setBackgroundDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.background_overview)); // Set Background
 
         return view;
     }

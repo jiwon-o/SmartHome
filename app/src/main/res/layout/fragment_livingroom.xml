@@ -43,10 +43,10 @@
 
 
                         <ImageView
-                            android:id="@+id/iv_livingroom_light"
+                            android:id="@+id/img_livingroom_light"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic_light" />
+                            android:src="@drawable/ic_light_on" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -190,7 +190,7 @@
                             android:textStyle="normal" />
 
                         <TextView
-                            android:id="@+id/tv_livingroom_tv"
+                            android:id="@+id/txt_livingroom_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
@@ -202,7 +202,7 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:id="@+id/iv_livingroom_tv"
+                        android:id="@+id/img_livingroom_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
@@ -257,7 +257,7 @@
                                 android:textStyle="normal" />
 
                             <TextView
-                                android:id="@+id/tv_livingroom_aircon"
+                                android:id="@+id/txt_livingroom_aircon"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="8dp"
@@ -269,7 +269,7 @@
                         </LinearLayout>
 
                         <ImageView
-                            android:id="@+id/iv_check"
+                            android:id="@+id/img_check"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="12dp"
@@ -279,7 +279,7 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <ImageView
-                            android:id="@+id/iv_livingroom_aircon"
+                            android:id="@+id/img_livingroom_aircon"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="right"
@@ -343,7 +343,7 @@
                             android:textStyle="normal" />
 
                         <TextView
-                            android:id="@+id/tv_livingroom_speaker"
+                            android:id="@+id/txt_livingroom_speaker"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
@@ -355,7 +355,7 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:id="@+id/iv_livingroom_speaker"
+                        android:id="@+id/img_livingroom_speaker"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
@@ -367,7 +367,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/btn_plus"
+                    android:id="@+id/btn_add"
                     android:layout_width="0dp"
                     android:layout_height="112dp"
                     android:layout_marginLeft="12dp"

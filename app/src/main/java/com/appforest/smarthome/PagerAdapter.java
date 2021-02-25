@@ -5,13 +5,13 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-// Pager adapter in fragment_data
-public class PagerAdapterData extends FragmentStatePagerAdapter {
-    private int mNumOfTabs;
+// Pager adapter in fragment_home
+public class PagerAdapter extends FragmentStatePagerAdapter {
+    private int numOfTabs;
 
-    public PagerAdapterData(@NonNull FragmentManager fm, int NumOfTabs) {
+    public PagerAdapter(@NonNull FragmentManager fm, int NumOfTabs) {
         super(fm, NumOfTabs);
-        this.mNumOfTabs = NumOfTabs;
+        this.numOfTabs = NumOfTabs;
     }
 
     @NonNull
@@ -33,6 +33,6 @@ public class PagerAdapterData extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return mNumOfTabs;
+        return numOfTabs;
     }
 }

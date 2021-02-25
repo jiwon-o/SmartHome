@@ -45,7 +45,7 @@
 
 
                         <ImageView
-                            android:id="@+id/iv_bathroom_light"
+                            android:id="@+id/img_bathroom_light"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@drawable/ic_light_off" />
@@ -161,7 +161,7 @@
                 android:weightSum="2">
 
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/btn_plus"
+                    android:id="@+id/btn_add"
                     android:layout_width="0dp"
                     android:layout_height="112dp"
                     android:layout_weight="1"

@@ -11,9 +11,10 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+// Bottom navigation bar activity
 public class MainActivity extends AppCompatActivity {
 
-    private BottomNavigationView mBottomNV;
+    private BottomNavigationView bottomNV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Navigation Listener
-        mBottomNV = findViewById(R.id.bottom_navigation_view);
-        mBottomNV.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        bottomNV = findViewById(R.id.bottom_navigation_view);
+        bottomNV.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 BottomNavigate(menuItem.getItemId());
@@ -30,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-        mBottomNV.setSelectedItemId(R.id.action_home);
+        bottomNV.setSelectedItemId(R.id.action_home);
     }
 
-    //Bottom navigation function
+    //Bottom navigation method
     private void BottomNavigate(int id) {
         String tag = String.valueOf(id);
         FragmentManager fragmentManager = getSupportFragmentManager();

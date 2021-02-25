@@ -7,52 +7,53 @@ import android.widget.Checkable;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+// Checkable linear layout of sliding up panel layout
 class CheckableLinearLayout extends LinearLayout implements Checkable {
 
-    // 만약 CheckBox가 아닌 View를 추가한다면 아래의 변수 사용 가능.
-     private boolean mIsChecked;
+    // Current Power off
+    private boolean powerChecked = false;
 
     public CheckableLinearLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
-
-         mIsChecked = true ;
 
     }
 
     @Override
     public void setChecked(boolean checked) {
-        ImageView tb = (ImageView) findViewById(R.id.iv_power) ;
+        // Get id of the power image
+        ImageView powerImage = (ImageView) findViewById(R.id.img_power);
 
-        tb.setOnClickListener(new View.OnClickListener() {
-
+        // Click to change the status of power button
+        powerImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mIsChecked == true) {
-                    tb.setImageResource(R.drawable.ic_on);
-                    mIsChecked = false;
+                powerChecked = !powerChecked;
+                if (powerChecked) {
+                    powerImage.setImageResource(R.drawable.ic_on);
+
                 } else {
-                    tb.setImageResource(R.drawable.ic_off);
-                    mIsChecked = true;
+                    powerImage.setImageResource(R.drawable.ic_off);
+
                 }
             }
         });
 
-        // CheckBox 가 아닌 View의 상태 변경.
     }
 
     @Override
     public boolean isChecked() {
-        ImageView tb = (ImageView) findViewById(R.id.iv_power) ;
+        // Get id of the power image
+        ImageView powerImage = (ImageView) findViewById(R.id.img_power);
 
-
-         return mIsChecked ;
+        // return powerChecked
+        return powerChecked;
     }
 
     @Override
     public void toggle() {
-        ImageView tb = (ImageView) findViewById(R.id.iv_power) ;
+        // Get id of the power image
+        ImageView powerImage = (ImageView) findViewById(R.id.img_power);
 
-        //setChecked(tv.isChecked() ? false : true) ;
-        setChecked(mIsChecked ? false : true) ;
+        setChecked(powerChecked ? false : true);
     }
 }

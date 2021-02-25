@@ -9,10 +9,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+// Kitchen fragment
 public class KitchenFragment extends Fragment implements View.OnClickListener {
 
     private ImageView lightButton;
@@ -25,8 +25,8 @@ public class KitchenFragment extends Fragment implements View.OnClickListener {
     private CardView fridgeBackground;
     private CardView ovenBackground;
 
-    private CardView lightFrame;
-    private CardView tempFrame;
+    private CardView lightSettingButton;
+    private CardView tempSettingButton;
 
     Intent intent;
 
@@ -43,25 +43,31 @@ public class KitchenFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_kitchen, container, false);
 
-        lightButton = (ImageView) view.findViewById(R.id.iv_kitchen_light);
-        fridgeButton = (ImageView) view.findViewById(R.id.iv_kitchen_fridge);
-        ovenButton = (ImageView) view.findViewById(R.id.iv_kitchen_oven);
+        // Get id of the buttons
+        lightButton = (ImageView) view.findViewById(R.id.img_kitchen_light);
+        fridgeButton = (ImageView) view.findViewById(R.id.img_kitchen_fridge);
+        ovenButton = (ImageView) view.findViewById(R.id.img_kitchen_oven);
 
-        fridgeText = (TextView) view.findViewById(R.id.tv_kitchen_fridge);
-        ovenText = (TextView) view.findViewById(R.id.tv_kitchen_oven);
+        // Get id of the On/Off text
+        fridgeText = (TextView) view.findViewById(R.id.txt_kitchen_fridge);
+        ovenText = (TextView) view.findViewById(R.id.txt_kitchen_oven);
 
+        // Get id of the background color
         fridgeBackground = (CardView) view.findViewById(R.id.background_kitchen_fridge);
         ovenBackground = (CardView) view.findViewById(R.id.background_kitchen_oven);
 
+        // Get id of the add button
+        CardView addButton = (CardView) view.findViewById(R.id.btn_add);
+        addButton.setOnClickListener(this);
+
+        // Start each method
         lightPowerBtn(lightButton);
         fridgePowerBtn(fridgeButton);
         ovenPowerBtn(ovenButton);
 
-        CardView open = (CardView) view.findViewById(R.id.btn_plus);
-        open.setOnClickListener(this);
-
-        lightFrame = (CardView) view.findViewById(R.id.btn_light);
-        lightFrame.setOnClickListener(new View.OnClickListener() {
+        // Listener to go to the light setting screen
+        lightSettingButton = (CardView) view.findViewById(R.id.btn_light);
+        lightSettingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 intent = new Intent(getActivity(), LightActivity.class);
@@ -69,8 +75,9 @@ public class KitchenFragment extends Fragment implements View.OnClickListener {
             }
         });
 
-        tempFrame = (CardView) view.findViewById(R.id.btn_temp);
-        tempFrame.setOnClickListener(new View.OnClickListener() {
+        // Listener to go to the temperature setting screen
+        tempSettingButton = (CardView) view.findViewById(R.id.btn_temp);
+        tempSettingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 intent = new Intent(getActivity(), TempActivity.class);
@@ -81,16 +88,18 @@ public class KitchenFragment extends Fragment implements View.OnClickListener {
         return view;
     }
 
-
+    // Current Light on
     private boolean lightChecked = true;
+
+    // Click to change the status of light bulb
     private void lightPowerBtn(ImageView lightButton) {
         lightButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (lightChecked == true) {
-                    lightButton.setImageResource(R.drawable.ic_light);
+                if (lightChecked == true) { // When the light turn on
+                    lightButton.setImageResource(R.drawable.ic_light_on);
                     lightChecked = false;
-                } else {
+                } else { // When the light turn off
                     lightButton.setImageResource(R.drawable.ic_light_off);
                     lightChecked = true;
                 }
@@ -98,17 +107,20 @@ public class KitchenFragment extends Fragment implements View.OnClickListener {
         });
     }
 
+    // Current Refrigerator off
     private boolean fridgeChecked = false;
+
+    // Click to change the status of refrigerator power
     private void fridgePowerBtn(ImageView fridgeButton) {
         fridgeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (fridgeChecked == true) {
+                if (fridgeChecked == true) { // When the refrigerator turn on
                     fridgeButton.setImageResource(R.drawable.ic_on);
                     fridgeText.setText("ON");
                     fridgeBackground.setCardBackgroundColor(getActivity().getColor(R.color.white));
                     fridgeChecked = false;
-                } else {
+                } else { // When the refrigerator turn off
                     fridgeButton.setImageResource(R.drawable.ic_off);
                     fridgeText.setText("OFF");
                     fridgeBackground.setCardBackgroundColor(getActivity().getColor(R.color.light_gray));
@@ -118,17 +130,20 @@ public class KitchenFragment extends Fragment implements View.OnClickListener {
         });
     }
 
+    // Current Oven on
     private boolean ovenChecked = true;
+
+    // Click to change the status of oven power
     private void ovenPowerBtn(ImageView ovenButton) {
         ovenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ovenChecked == true) {
+                if (ovenChecked == true) { // When the oven turn on
                     ovenButton.setImageResource(R.drawable.ic_on);
                     ovenText.setText("ON");
                     ovenBackground.setCardBackgroundColor(getActivity().getColor(R.color.white));
                     ovenChecked = false;
-                } else {
+                } else { // When the oven turn off
                     ovenButton.setImageResource(R.drawable.ic_off);
                     ovenText.setText("OFF");
                     ovenBackground.setCardBackgroundColor(getActivity().getColor(R.color.light_gray));
@@ -138,21 +153,20 @@ public class KitchenFragment extends Fragment implements View.OnClickListener {
         });
     }
 
+    // When you press the add button, connecting Pop-up dialog open
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-
-            case R.id.btn_plus:
-                // 데이터를 다이얼로그로 보내는 코드
+            case R.id.btn_add:
+                // Sending data to the dialogue
                 Bundle args = new Bundle();
                 args.putString("key", "value");
-                //---------------------------------------.//
+
                 FragmentDialog dialog = new FragmentDialog();
-                dialog.setArguments(args); // 데이터 전달
-                dialog.show(getActivity().getSupportFragmentManager(),"tag");
+                dialog.setArguments(args); // Data transfer
+                dialog.show(getActivity().getSupportFragmentManager(), "tag");
 
                 break;
-
         }
     }
 

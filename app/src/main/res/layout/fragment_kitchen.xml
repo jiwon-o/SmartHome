@@ -44,7 +44,7 @@
 
 
                         <ImageView
-                            android:id="@+id/iv_kitchen_light"
+                            android:id="@+id/img_kitchen_light"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@drawable/ic_light_off" />
@@ -191,7 +191,7 @@
                             android:textStyle="normal" />
 
                         <TextView
-                            android:id="@+id/tv_kitchen_fridge"
+                            android:id="@+id/txt_kitchen_fridge"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
@@ -203,7 +203,7 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:id="@+id/iv_kitchen_fridge"
+                        android:id="@+id/img_kitchen_fridge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
@@ -250,7 +250,7 @@
                             android:textStyle="normal" />
 
                         <TextView
-                            android:id="@+id/tv_kitchen_oven"
+                            android:id="@+id/txt_kitchen_oven"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
@@ -262,7 +262,7 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:id="@+id/iv_kitchen_oven"
+                        android:id="@+id/img_kitchen_oven"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
@@ -289,10 +289,11 @@
                 android:weightSum="2">
 
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/btn_plus"
+                    android:id="@+id/btn_add"
                     android:layout_width="0dp"
                     android:layout_height="112dp"
                     android:layout_weight="1"
+                    android:layout_marginRight="12dp"
                     app:cardBackgroundColor="@color/transparency"
                     app:cardCornerRadius="5dp"
                     app:cardElevation="0dp"

@@ -11,10 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+// Living room fragment
 public class LivingroomFragment extends Fragment implements View.OnClickListener {
 
     private ImageView lightButton;
@@ -32,10 +32,11 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
 
     private ImageView checkingImage;
 
-    private CardView lightFrame;
-    private CardView tempFrame;
+    private CardView lightSettingButton;
+    private CardView tempSettingButton;
 
     Intent intent;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,33 +50,40 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_livingroom, container, false);
 
-        lightButton = (ImageView) view.findViewById(R.id.iv_livingroom_light);
-        tvButton = (ImageView) view.findViewById(R.id.iv_livingroom_tv);
-        airconButton = (ImageView) view.findViewById(R.id.iv_livingroom_aircon);
-        speakerButton = (ImageView) view.findViewById(R.id.iv_livingroom_speaker);
+        // Get id of the buttons
+        lightButton = (ImageView) view.findViewById(R.id.img_livingroom_light);
+        tvButton = (ImageView) view.findViewById(R.id.img_livingroom_tv);
+        airconButton = (ImageView) view.findViewById(R.id.img_livingroom_aircon);
+        speakerButton = (ImageView) view.findViewById(R.id.img_livingroom_speaker);
 
-        tvText = (TextView) view.findViewById(R.id.tv_livingroom_tv);
-        airconText = (TextView) view.findViewById(R.id.tv_livingroom_aircon);
-        speakerText = (TextView) view.findViewById(R.id.tv_livingroom_speaker);
+        // Get id of the On/Off text
+        tvText = (TextView) view.findViewById(R.id.txt_livingroom_tv);
+        airconText = (TextView) view.findViewById(R.id.txt_livingroom_aircon);
+        speakerText = (TextView) view.findViewById(R.id.txt_livingroom_speaker);
 
+        // Get id of the background color
         tvBackground = (CardView) view.findViewById(R.id.background_livingroom_tv);
         airconBackground = (CardView) view.findViewById(R.id.background_livingroom_aircon);
         speakerBackground = (CardView) view.findViewById(R.id.background_livingroom_speaker);
 
-        checkingImage = (ImageView) view.findViewById(R.id.iv_check);
+        // Get id of the add button
+        CardView addButton = (CardView) view.findViewById(R.id.btn_add);
+        addButton.setOnClickListener(this);
 
-        buttonAnimation(checkingImage);
+        // Get id of the check image
+        checkingImage = (ImageView) view.findViewById(R.id.img_check);
 
+        // Start each method
         lightPowerBtn(lightButton);
         tvPowerBtn(tvButton);
         airconPowerBtn(airconButton);
         speakerPowerBtn(speakerButton);
 
-        CardView open = (CardView) view.findViewById(R.id.btn_plus);
-        open.setOnClickListener(this);
+        buttonAnimation(checkingImage);
 
-        lightFrame = (CardView) view.findViewById(R.id.btn_light);
-        lightFrame.setOnClickListener(new View.OnClickListener() {
+        // Listener to go to the light setting screen
+        lightSettingButton = (CardView) view.findViewById(R.id.btn_light);
+        lightSettingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 intent = new Intent(getActivity(), LightActivity.class);
@@ -83,15 +91,15 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
             }
         });
 
-        tempFrame = (CardView) view.findViewById(R.id.btn_temp);
-        tempFrame.setOnClickListener(new View.OnClickListener() {
+        // Listener to go to the temperature setting screen
+        tempSettingButton = (CardView) view.findViewById(R.id.btn_temp);
+        tempSettingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 intent = new Intent(getActivity(), TempActivity.class);
                 startActivity(intent);
             }
         });
-
 
         return view;
     }
@@ -102,16 +110,18 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
         checkingImage.startAnimation(startAnimation);
     }
 
-
+    // Current Light off
     private boolean lightChecked = false;
+
+    // Click to change the status of light bulb
     private void lightPowerBtn(ImageView lightButton) {
         lightButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (lightChecked == true) {
-                    lightButton.setImageResource(R.drawable.ic_light);
+                if (lightChecked == true) { // When the light turn on
+                    lightButton.setImageResource(R.drawable.ic_light_on);
                     lightChecked = false;
-                } else {
+                } else { // When the light turn off
                     lightButton.setImageResource(R.drawable.ic_light_off);
                     lightChecked = true;
                 }
@@ -119,17 +129,20 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
         });
     }
 
+    // Current TV on
     private boolean tvChecked = true;
+
+    // Click to change the status of TV power
     private void tvPowerBtn(ImageView tvButton) {
         tvButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (tvChecked == true) {
+                if (tvChecked == true) { // When the TV turn on
                     tvButton.setImageResource(R.drawable.ic_on);
                     tvText.setText("ON");
                     tvBackground.setCardBackgroundColor(getActivity().getColor(R.color.white));
                     tvChecked = false;
-                } else {
+                } else { // When the TV turn off
                     tvButton.setImageResource(R.drawable.ic_off);
                     tvText.setText("OFF");
                     tvBackground.setCardBackgroundColor(getActivity().getColor(R.color.light_gray));
@@ -140,17 +153,20 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
         });
     }
 
+    // Current Air conditioner off
     private boolean airconChecked = false;
+
+    // Click to change the status of air conditioner power
     private void airconPowerBtn(ImageView airconButton) {
         airconButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (airconChecked == true) {
+                if (airconChecked == true) { // When the air conditioner turn on
                     airconButton.setImageResource(R.drawable.ic_on);
                     airconText.setText("ON");
                     airconBackground.setCardBackgroundColor(getActivity().getColor(R.color.checking));
                     airconChecked = false;
-                } else {
+                } else { // When the air conditioner turn off
                     airconButton.setImageResource(R.drawable.ic_off);
                     airconText.setText("OFF");
                     airconBackground.setCardBackgroundColor(getActivity().getColor(R.color.light_gray));
@@ -160,17 +176,20 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
         });
     }
 
+    // Current Speaker on
     private boolean speakerChecked = true;
+
+    // Click to change the status of speaker power
     private void speakerPowerBtn(ImageView speakerButton) {
         speakerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (speakerChecked == true) {
+                if (speakerChecked == true) { // When the speaker turn on
                     speakerButton.setImageResource(R.drawable.ic_on);
                     speakerText.setText("Playing");
                     speakerBackground.setCardBackgroundColor(getActivity().getColor(R.color.white));
                     speakerChecked = false;
-                } else {
+                } else { // When the speaker turn off
                     speakerButton.setImageResource(R.drawable.ic_off);
                     speakerText.setText("OFF");
                     speakerBackground.setCardBackgroundColor(getActivity().getColor(R.color.light_gray));
@@ -180,22 +199,20 @@ public class LivingroomFragment extends Fragment implements View.OnClickListener
         });
     }
 
-
+    // When you press the add button, connecting Pop-up dialog open
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-
-            case R.id.btn_plus:
-                // 데이터를 다이얼로그로 보내는 코드
+            case R.id.btn_add:
+                // Sending data to the dialogue
                 Bundle args = new Bundle();
                 args.putString("key", "value");
-                //---------------------------------------.//
+
                 FragmentDialog dialog = new FragmentDialog();
-                dialog.setArguments(args); // 데이터 전달
-                dialog.show(getActivity().getSupportFragmentManager(),"tag");
+                dialog.setArguments(args); // Data transfer
+                dialog.show(getActivity().getSupportFragmentManager(), "tag");
 
                 break;
-
         }
     }
 }

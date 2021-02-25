@@ -10,12 +10,12 @@ import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.utils.MPPointF;
 import com.github.mikephil.charting.utils.Utils;
 
-//Marker view of range fragment
-public class RangeMarkerView extends MarkerView {
+// Marker view of electricity usage graph
+public class UsageMarkerView extends MarkerView {
 
     private TextView tvContent;
 
-    public RangeMarkerView(Context context, int layoutResource) {
+    public UsageMarkerView(Context context, int layoutResource) {
         super(context, layoutResource);
 
         tvContent = (TextView) findViewById(R.id.tv_content);

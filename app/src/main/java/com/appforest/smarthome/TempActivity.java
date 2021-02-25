@@ -18,7 +18,7 @@ public class TempActivity extends AppCompatActivity {
     private ImageView backImage;
 
     private TextView temperatureNum;
-    private ImageView plusButton;
+    private ImageView addButton;
     private ImageView minusButton;
     private ToggleButton tempPowerButton;
 
@@ -38,10 +38,10 @@ public class TempActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temp);
 
-        backImage = findViewById(R.id.image_back);
+        backImage = findViewById(R.id.img_back);
 
         temperatureNum = findViewById(R.id.temperature_Number);
-        plusButton = findViewById(R.id.btn_temp_plus);
+        addButton = findViewById(R.id.btn_temp_plus);
         minusButton = findViewById(R.id.btn_temp_minus);
 
         tempPowerButton = findViewById(R.id.btn_temp);
@@ -54,7 +54,7 @@ public class TempActivity extends AppCompatActivity {
             }
         });
 
-        plusButton = findViewById(R.id.btn_temp_plus);
+        addButton = findViewById(R.id.btn_temp_plus);
         minusButton = findViewById(R.id.btn_temp_minus);
 
         autoButton = (ImageView) findViewById(R.id.img_temp_auto_unclick);
@@ -69,10 +69,10 @@ public class TempActivity extends AppCompatActivity {
 
         PlusMinusButton plusMinusButton = new PlusMinusButton();
         temperatureNum.setText(count + "");
-        plusButton.setOnClickListener(plusMinusButton);
+        addButton.setOnClickListener(plusMinusButton);
         minusButton.setOnClickListener(plusMinusButton);
 
-        seekBarMain = (SeekBar) findViewById(R.id.seekBar_main);
+        seekBarMain = (SeekBar) findViewById(R.id.seekBar1);
         TextView textView = (TextView) findViewById(R.id.textView);
 
         tempPowerButton.setOnClickListener(new View.OnClickListener() {
@@ -107,7 +107,7 @@ public class TempActivity extends AppCompatActivity {
     class PlusMinusButton implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-            if (tempChecked == true) {//When you click Climate On/Off button
+            if (tempChecked == true) { // When you click Climate On/Off button
                 switch (v.getId()) {
                     case R.id.btn_temp_plus: {
                         if (count < 85) {
@@ -124,7 +124,7 @@ public class TempActivity extends AppCompatActivity {
                         break;
                     }
                 }
-            } else if (tempChecked == false) {//When you didn't click Climate On/Off button
+            } else if (tempChecked == false) { // When you didn't click Climate On/Off button
                 switch (v.getId()) {
                     case R.id.btn_temp_plus:
                     case R.id.btn_temp_minus:

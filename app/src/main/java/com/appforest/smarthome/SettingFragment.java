@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+// Setting fragment
 public class SettingFragment extends Fragment {
 
     @Override
@@ -26,45 +27,44 @@ public class SettingFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_setting, container, false);
 
-        ListView listview ;
+        ListView listview;
         SettingListViewAdapter adapter;
 
-        // Adapter 생성
-        adapter = new SettingListViewAdapter() ;
+        // Create Adapter
+        adapter = new SettingListViewAdapter();
 
-        // 리스트뷰 참조 및 Adapter달기
         listview = (ListView) view.findViewById(R.id.listview1);
         listview.setAdapter(adapter);
 
-        // 첫 번째 아이템 추가.
+        // Add the first item
         adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_set_device),
                 "Device management");
-        // 두 번째 아이템 추가.
+        // Add the second item
         adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_set_mode),
-                "Mode") ;
-        // 세 번째 아이템 추가.
+                "Mode");
+        // Add the third item
         adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_set_home),
-                "Home screen") ;
-        // 네 번째 아이템 추가.
+                "Home screen");
+        // Add the fourth item
         adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_set_member),
-                "Member connect") ;
-        // 다섯 번째 아이템 추가.
+                "Member connect");
+        // Add the fifth item
         adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_set_inquiry),
-                "Inquiry") ;
+                "Inquiry");
 
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView parent, View v, int position, long id) {
-                // get item
-                SettingListViewItem item = (SettingListViewItem) parent.getItemAtPosition(position) ;
+                // Get item
+                SettingListViewItem item = (SettingListViewItem) parent.getItemAtPosition(position);
 
-                String titleStr = item.getTitle() ;
-                Drawable iconDrawable = item.getIcon() ;
+                String titleStr = item.getTitle();
+                Drawable iconDrawable = item.getIcon();
 
                 // TODO : use item data.
             }
-        }) ;
+        });
 
         return view;
     }

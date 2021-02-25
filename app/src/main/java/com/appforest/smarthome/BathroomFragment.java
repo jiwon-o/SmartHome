@@ -9,17 +9,17 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+// Bathroom fragment
 public class BathroomFragment extends Fragment implements View.OnClickListener {
 
     private ImageView lightButton;
-
-    private CardView lightFrame;
-    private CardView tempFrame;
+    private CardView lightSettingButton;
+    private CardView tempSettingButton;
 
     Intent intent;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,16 +33,15 @@ public class BathroomFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_bathroom, container, false);
 
-        lightButton = (ImageView) view.findViewById(R.id.iv_bathroom_light);
+        // Get id of the light button
+        lightButton = (ImageView) view.findViewById(R.id.img_bathroom_light);
 
+        // Start lightPowerBtn method
         lightPowerBtn(lightButton);
 
-        CardView open = (CardView) view.findViewById(R.id.btn_plus);
-
-        open.setOnClickListener(this);
-
-        lightFrame = (CardView) view.findViewById(R.id.btn_light);
-        lightFrame.setOnClickListener(new View.OnClickListener() {
+        // Listener to go to the light setting screen
+        lightSettingButton = (CardView) view.findViewById(R.id.btn_light);
+        lightSettingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 intent = new Intent(getActivity(), LightActivity.class);
@@ -50,8 +49,9 @@ public class BathroomFragment extends Fragment implements View.OnClickListener {
             }
         });
 
-        tempFrame = (CardView) view.findViewById(R.id.btn_temp);
-        tempFrame.setOnClickListener(new View.OnClickListener() {
+        // Listener to go to the temperature setting screen
+        tempSettingButton = (CardView) view.findViewById(R.id.btn_temp);
+        tempSettingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 intent = new Intent(getActivity(), TempActivity.class);
@@ -59,20 +59,25 @@ public class BathroomFragment extends Fragment implements View.OnClickListener {
             }
         });
 
+        // Get id of the add button
+        CardView addButton = (CardView) view.findViewById(R.id.btn_add);
+        addButton.setOnClickListener(this);
+
         return view;
     }
 
-
+    // Current Light on
     private boolean lightChecked = true;
 
+    // Click to change the status of light bulb
     private void lightPowerBtn(ImageView lightButton) {
         lightButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (lightChecked == true) {
-                    lightButton.setImageResource(R.drawable.ic_light);
+                if (lightChecked == true) { // When the light turn on
+                    lightButton.setImageResource(R.drawable.ic_light_on);
                     lightChecked = false;
-                } else {
+                } else { // When the light turn off
                     lightButton.setImageResource(R.drawable.ic_light_off);
                     lightChecked = true;
                 }
@@ -80,21 +85,20 @@ public class BathroomFragment extends Fragment implements View.OnClickListener {
         });
     }
 
+    // When you press the add button, connecting Pop-up dialog open
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-
-            case R.id.btn_plus:
-                // 데이터를 다이얼로그로 보내는 코드
+            case R.id.btn_add:
+                // Sending data to the dialogue
                 Bundle args = new Bundle();
                 args.putString("key", "value");
-                //---------------------------------------.//
+
                 FragmentDialog dialog = new FragmentDialog();
-                dialog.setArguments(args); // 데이터 전달
+                dialog.setArguments(args); // Data transfer
                 dialog.show(getActivity().getSupportFragmentManager(), "tag");
 
                 break;
-
         }
     }
 }

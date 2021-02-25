@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/background_white">
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,9 +22,8 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp">
 
-
             <ImageView
-                android:id="@+id/image_back"
+                android:id="@+id/img_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
@@ -36,7 +34,7 @@
                 app:srcCompat="@drawable/ic_back_arrow" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -51,24 +49,24 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
-                android:id="@+id/linearLayout4"
+                android:id="@+id/linearLayout1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="40dp"
                 android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="@+id/linearLayout13"
-                app:layout_constraintTop_toBottomOf="@+id/textView3">
+                app:layout_constraintTop_toBottomOf="@+id/textView1">
 
                 <ImageView
-                    android:id="@+id/imageView4"
+                    android:id="@+id/imageView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/ic_elect" />
 
                 <TextView
-                    android:id="@+id/textView14"
+                    android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
@@ -82,7 +80,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
@@ -93,7 +91,7 @@
                 android:textSize="15sp"
                 android:textStyle="normal"
                 app:layout_constraintEnd_toEndOf="@+id/linearLayout13"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
             <LinearLayout
                 android:id="@+id/linearLayout13"
@@ -107,7 +105,7 @@
                 android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
 
                 <LinearLayout
                     android:id="@+id/linearLayout5"
@@ -116,7 +114,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView16"
+                        android:id="@+id/textView4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
@@ -128,7 +126,7 @@
                         android:textStyle="normal" />
 
                     <Switch
-                        android:id="@+id/switch_main"
+                        android:id="@+id/switch1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
@@ -148,7 +146,7 @@
                     android:orientation="horizontal">
 
                     <SeekBar
-                        android:id="@+id/seekBar_main"
+                        android:id="@+id/seekBar1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
@@ -159,7 +157,7 @@
 
 
                     <TextView
-                        android:id="@+id/txtValue_main"
+                        android:id="@+id/txt_light1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -193,7 +191,7 @@
                         android:textStyle="normal" />
 
                     <Switch
-                        android:id="@+id/switch1"
+                        android:id="@+id/switch2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
@@ -212,7 +210,7 @@
                     android:orientation="horizontal">
 
                     <SeekBar
-                        android:id="@+id/seekBar1"
+                        android:id="@+id/seekBar2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
@@ -222,7 +220,7 @@
                         android:thumb="@drawable/seekbar_seekbar1_thumb" />
 
                     <TextView
-                        android:id="@+id/txtValue1"
+                        android:id="@+id/txt_light2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -255,7 +253,7 @@
                         android:textStyle="normal" />
 
                     <Switch
-                        android:id="@+id/switch2"
+                        android:id="@+id/switch3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="10dp"
@@ -276,7 +274,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/linearLayout9">
 
                     <SeekBar
-                        android:id="@+id/seekBar2"
+                        android:id="@+id/seekBar3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
@@ -286,7 +284,7 @@
                         android:thumb="@drawable/seekbar_seekbar1_thumb" />
 
                     <TextView
-                        android:id="@+id/txtValue2"
+                        android:id="@+id/txt_light3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -319,7 +317,7 @@
                         android:textStyle="normal" />
 
                     <Switch
-                        android:id="@+id/switch3"
+                        android:id="@+id/switch4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="10dp"
@@ -337,7 +335,7 @@
                     android:orientation="horizontal">
 
                     <SeekBar
-                        android:id="@+id/seekBar3"
+                        android:id="@+id/seekBar4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
@@ -347,7 +345,7 @@
                         android:thumb="@drawable/seekbar_seekbar1_thumb" />
 
                     <TextView
-                        android:id="@+id/txtValue3"
+                        android:id="@+id/txt_light4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

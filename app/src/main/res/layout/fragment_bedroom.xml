@@ -45,10 +45,10 @@
 
 
                         <ImageView
-                            android:id="@+id/iv_bedroom_light"
+                            android:id="@+id/img_badroom_light"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic_light" />
+                            android:src="@drawable/ic_light_on" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -194,7 +194,7 @@
                             android:textStyle="normal" />
 
                         <TextView
-                            android:id="@+id/tv_bedroom_tv"
+                            android:id="@+id/txt_bedroom_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
@@ -206,7 +206,7 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:id="@+id/iv_bedroom_tv"
+                        android:id="@+id/img_badroom_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
@@ -253,7 +253,7 @@
                             android:textStyle="normal" />
 
                         <TextView
-                            android:id="@+id/tv_bedroom_aircon"
+                            android:id="@+id/txt_bedroom_aircon"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
@@ -265,7 +265,7 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:id="@+id/iv_bedroom_aircon"
+                        android:id="@+id/img_badroom_aircon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
@@ -326,7 +326,7 @@
                             android:textStyle="normal" />
 
                         <TextView
-                            android:id="@+id/tv_bedroom_fan"
+                            android:id="@+id/txt_bedroom_fan"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
@@ -338,7 +338,7 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:id="@+id/iv_bedroom_fan"
+                        android:id="@+id/img_badroom_fan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
@@ -350,7 +350,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/btn_plus"
+                    android:id="@+id/btn_add"
                     android:layout_width="0dp"
                     android:layout_height="112dp"
                     android:layout_marginLeft="12dp"
