@@ -33,6 +33,7 @@ public class SettingFragment extends Fragment {
         // Create Adapter
         adapter = new SettingListViewAdapter();
 
+        // Reference listview
         listview = (ListView) view.findViewById(R.id.listview1);
         listview.setAdapter(adapter);
 

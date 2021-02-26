@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!--
+Author: Mark, Sally AppForest.kr
+Date: 2.26.2021
+Description: Temperature setting screen
+Rights: Copyrighted templates and codes. This template and code cannot be used without a license. Also, even if you have purchased a license, it can only be used with one specific end product.
+Copyright 2021 © AppForest.kr-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -40,7 +45,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="sans-serif-medium"
-                android:lineSpacingExtra="4sp"
                 android:text="Temp"
                 android:textColor="#000000"
                 android:textSize="18sp"
@@ -78,7 +82,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-medium"
-                        android:lineSpacingExtra="3sp"
                         android:text="Energy Usage (Today)"
                         android:textColor="#000000"
                         android:textSize="14sp"
@@ -122,7 +125,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:lineSpacingExtra="3sp"
                     android:text="Current Temp"
                     android:textColor="#000000"
                     android:textSize="15sp"
@@ -133,7 +135,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_semibold"
-                    android:lineSpacingExtra="6sp"
                     android:text="82℉"
                     android:textColor="#000000"
                     android:textSize="24sp"
@@ -217,8 +218,8 @@
                 android:id="@+id/linearLayout16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_marginTop="32dp"
+                android:gravity="center"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -229,7 +230,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="16dp"
-                    android:src="@drawable/ic_temp_minus"/>
+                    android:src="@drawable/ic_temp_minus" />
 
                 <TextView
                     android:id="@+id/temperature_Number"
@@ -256,7 +257,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:src="@drawable/ic_temp_plus"/>
+                    android:src="@drawable/ic_temp_plus" />
 
             </LinearLayout>
 
@@ -274,7 +275,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout16" />
 
             <SeekBar
-                android:id="@+id/seekBar1"
+                android:id="@+id/seekBar_temp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -297,7 +298,7 @@
                 android:textSize="16sp"
                 android:textStyle="normal"
                 app:layout_constraintStart_toStartOf="@+id/textView21"
-                app:layout_constraintTop_toBottomOf="@+id/seekBar1" />
+                app:layout_constraintTop_toBottomOf="@+id/seekBar_temp" />
 
             <LinearLayout
                 android:id="@+id/linearLayout17"

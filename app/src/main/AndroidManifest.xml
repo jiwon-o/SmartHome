@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/img_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartHome">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,9 +18,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".LightActivity"
+        <activity
+            android:name=".LightActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".TempActivity"
+        <activity
+            android:name=".TempActivity"
             android:screenOrientation="portrait" />
 
     </application>

@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!--
+Author: Mark, Sally AppForest.kr
+Date: 2.26.2021
+Description: Home screen
+Rights: Copyrighted templates and codes. This template and code cannot be used without a license. Also, even if you have purchased a license, it can only be used with one specific end product.
+Copyright 2021 © AppForest.kr-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -37,7 +42,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/oswald"
-        android:lineSpacingExtra="15sp"
         android:text="Sweet Home"
         android:textColor="#000000"
         android:textSize="32sp"
@@ -64,9 +68,9 @@
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="none"
         android:layout_marginStart="40dp"
         android:layout_marginTop="16dp"
+        android:scrollbars="none"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3">
 
@@ -85,9 +89,9 @@
                 <ImageView
                     android:id="@+id/img_inhome"
                     android:layout_width="wrap_content"
-                    android:elevation="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:elevation="10dp"
                     android:src="@drawable/ic_mode_inhome_unclick" />
 
                 <TextView
@@ -111,9 +115,9 @@
                 <ImageView
                     android:id="@+id/img_goingout"
                     android:layout_width="wrap_content"
-                    android:elevation="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:elevation="10dp"
                     android:src="@drawable/ic_mode_goingout_unclick" />
 
                 <TextView
@@ -137,9 +141,9 @@
                 <ImageView
                     android:id="@+id/img_night"
                     android:layout_width="wrap_content"
-                    android:elevation="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:elevation="10dp"
                     android:src="@drawable/ic_mode_night_unclick" />
 
                 <TextView
@@ -164,8 +168,8 @@
                     android:id="@+id/img_party"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:elevation="10dp"
                     android:layout_weight="1"
+                    android:elevation="10dp"
                     android:src="@drawable/ic_mode_party_unclick" />
 
                 <TextView

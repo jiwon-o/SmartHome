@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!--
+Author: Mark, Sally AppForest.kr
+Date: 2.26.2021
+Description: Main
+Rights: Copyrighted templates and codes. This template and code cannot be used without a license. Also, even if you have purchased a license, it can only be used with one specific end product.
+Copyright 2021 © AppForest.kr-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,7 +12,6 @@
     android:background="#ffffff"
     android:orientation="vertical"
     tools:context=".MainActivity">
-
 
     <FrameLayout
         android:id="@+id/frame_layout"
@@ -22,6 +26,6 @@
         app:itemIconSize="26dp"
         app:itemIconTint="@drawable/menu_selector_color"
         app:labelVisibilityMode="unlabeled"
-        app:menu="@menu/bottom_navigition_menu" />
+        app:menu="@menu/bottom_navigation_menu" />
 
 </LinearLayout>

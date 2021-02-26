@@ -42,22 +42,22 @@ public class LightActivity extends AppCompatActivity implements CompoundButton.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_light);
 
-        // Get back image id
+        // Get id of back image
         backImage = findViewById(R.id.img_back);
 
-        // Get seek bars id
+        // Get id of seek bars
         seekBar1 = (SeekBar) findViewById(R.id.seekBar1);
         seekBar2 = (SeekBar) findViewById(R.id.seekBar2);
         seekBar3 = (SeekBar) findViewById(R.id.seekBar3);
         seekBar4 = (SeekBar) findViewById(R.id.seekBar4);
 
-        // Get text value id
+        // Get id of text value
         txt_light1 = (TextView) findViewById(R.id.txt_light1);
         txt_light2 = (TextView) findViewById(R.id.txt_light2);
         txt_light3 = (TextView) findViewById(R.id.txt_light3);
         txt_light4 = (TextView) findViewById(R.id.txt_light4);
 
-        // Get switch id
+        // Get id of switches
         switch1 = (Switch) findViewById(R.id.switch1);
         switch1.setOnCheckedChangeListener(this);
         switch2 = (Switch) findViewById(R.id.switch2);

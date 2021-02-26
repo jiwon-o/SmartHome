@@ -27,12 +27,10 @@ public class UsageMarkerView extends MarkerView {
     public void refreshContent(Entry e, Highlight highlight) {
 
         if (e instanceof CandleEntry) {
-
             CandleEntry ce = (CandleEntry) e;
 
             tvContent.setText("" + Utils.formatNumber(ce.getHigh(), 0, true) + "kw");
         } else {
-
             tvContent.setText("" + Utils.formatNumber(e.getY(), 0, true) + "kw");
         }
 

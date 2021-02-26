@@ -1,9 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!--
+Author: Mark, Sally AppForest.kr
+Date: 2.26.2021
+Description: Setting screen
+Rights: Copyrighted templates and codes. This template and code cannot be used without a license. Also, even if you have purchased a license, it can only be used with one specific end product.
+Copyright 2021 © AppForest.kr-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background_white"
     tools:context=".SettingFragment">
 
@@ -13,7 +18,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:fontFamily="sans-serif-medium"
-        android:lineSpacingExtra="4sp"
         android:text="Settings"
         android:textColor="#000000"
         android:textSize="18sp"
@@ -23,13 +27,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
-        android:background="@color/white"
         android:id="@+id/listview1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
-        android:dividerHeight="0px"
+        android:background="@color/white"
         android:divider="#FFFFFF"
+        android:dividerHeight="0px"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />

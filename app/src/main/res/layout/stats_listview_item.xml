@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!--
+Author: Mark, Sally AppForest.kr
+Date: 2.26.2021
+Description: Listview item of statistics screen
+Rights: Copyrighted templates and codes. This template and code cannot be used without a license. Also, even if you have purchased a license, it can only be used with one specific end product.
+Copyright 2021 © AppForest.kr-->
 <com.appforest.smarthome.CheckableLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,7 +19,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="1" />
-
 
     <TextView
         android:id="@+id/textView1"
@@ -63,4 +67,5 @@
         android:layout_gravity="center"
         android:layout_weight="2"
         android:src="@drawable/ic_off" />
+
 </com.appforest.smarthome.CheckableLinearLayout>

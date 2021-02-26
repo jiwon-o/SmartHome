@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!--
+Author: Mark, Sally AppForest.kr
+Date: 2.26.2021
+Description: Statistics screen
+Rights: Copyrighted templates and codes. This template and code cannot be used without a license. Also, even if you have purchased a license, it can only be used with one specific end product.
+Copyright 2021 © AppForest.kr-->
 <com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,12 +17,12 @@
     app:umanoScrollableView="@id/listView"
     app:umanoShadowHeight="0dp"
     tools:context=".MainActivity">
-    <!-- gravity 를 bottom으로 하면 아래에서 위로 드래그, top으로 하면 위에서 아래로 드래그 할 수 있다.
-         umanoDragView 드래그 해서 보여줄 view를 선택
-         umanoScrollableView  슬라이딩 패널에 내용물이 패널에 표시되는것보다 많을 때 스크롤 해서 보여줄 view 부분
-         umanoParallaxOffset 에 값을 주면 해당 높이만큼 뒤에 화면을 올려준다.
-         umanoShadowHeight 는 슬라이딩 패널 윗부분에 그림자 효과
-         umanoOverlay 를 false로 해주면 슬라이딩 패널이 위로 보이고 뒷 부분은 반투명하게 보인다. -->
+    <!-- Gravity can be dragged from bottom to top, and from top to bottom
+         umanoDragView: Drag to select a view to show
+         umanoScrollableView: The part of the view that you want to scroll to show when the sliding panel contains more content than the panel displays
+         If you give a value to the umanoParallaxOffset, the screen is placed behind the corresponding height
+         umanoShadowHeight has a shadow effect on the top of the sliding panel
+         If you false the umanoOverlay, the sliding panel looks up and the back part looks translucent -->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -31,7 +36,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:fontFamily="sans-serif-medium"
-            android:lineSpacingExtra="4sp"
             android:text="Electricity Usage"
             android:textColor="#000000"
             android:textSize="18sp"
@@ -42,15 +46,15 @@
 
 
         <FrameLayout
-            android:background="@drawable/background_frame"
             android:id="@+id/frameLayout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
             android:layout_marginTop="32dp"
+            android:layout_marginRight="24dp"
+            android:background="@drawable/background_frame"
             android:paddingTop="16dp"
             android:paddingBottom="16dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView9">
@@ -74,7 +78,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
-                        android:lineSpacingExtra="3sp"
                         android:text="Total Usages"
                         android:textColor="#000000"
                         android:textSize="15sp"
@@ -85,7 +88,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/montserrat_semibold"
-                        android:lineSpacingExtra="6sp"
                         android:text="151 kw"
                         android:textColor="#000000"
                         android:textSize="26sp"
@@ -95,7 +97,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-medium"
-                        android:lineSpacingExtra="2sp"
                         android:text="+ 1.0%"
                         android:textColor="@color/pastel_red"
                         android:textSize="13sp"
@@ -115,7 +116,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
-                        android:lineSpacingExtra="3sp"
                         android:text="Total Cost"
                         android:textColor="#000000"
                         android:textSize="15sp"
@@ -126,7 +126,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/montserrat_semibold"
-                        android:lineSpacingExtra="6sp"
                         android:text="$170.5"
                         android:textColor="#000000"
                         android:textSize="26sp"
@@ -136,7 +135,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-medium"
-                        android:lineSpacingExtra="2sp"
                         android:text="- 2.3%"
                         android:textColor="#5f82f1"
                         android:textSize="13sp"
@@ -156,6 +154,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/frameLayout1">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -170,12 +169,11 @@
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- 올라오는 화면을 꽉 채우고 싶다면 match_parent, 내용물 만큼만 보이고 뒷 배경이 반투명처리로 보이고 싶다면 wrap_content-->
+    <!-- If you want to fill up the screen, match_parent. If you want to see only the contents and the background to be translucent, write_content-->
     <LinearLayout
         android:id="@+id/dragView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:clickable="true"
         android:focusable="false"
         android:orientation="vertical">
@@ -225,7 +223,6 @@
                 android:layout_weight="2"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="left"
-                android:lineSpacingExtra="3sp"
                 android:text="Device"
                 android:textColor="#000000"
                 android:textSize="14sp"
@@ -237,7 +234,6 @@
                 android:layout_weight="2"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="right"
-                android:lineSpacingExtra="3sp"
                 android:text="Usage"
                 android:textColor="#000000"
                 android:textSize="14sp"
@@ -249,7 +245,6 @@
                 android:layout_weight="2"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="right"
-                android:lineSpacingExtra="3sp"
                 android:text="Cost"
                 android:textColor="#000000"
                 android:textSize="14sp"
@@ -262,7 +257,7 @@
 
         </LinearLayout>
 
-        <!-- 스크롤 해서 보여줄 부분은 listview 또는 custom listview 또는 recyclerview를 사용 -->
+        <!-- Use listview or custom listview or recyclerview for scrolling parts -->
         <ListView
             android:id="@+id/listView"
             android:layout_width="match_parent"

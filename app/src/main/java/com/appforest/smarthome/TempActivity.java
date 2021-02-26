@@ -13,12 +13,13 @@ import android.widget.ToggleButton;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+// Temperature setting activity
 public class TempActivity extends AppCompatActivity {
 
     private ImageView backImage;
 
     private TextView temperatureNum;
-    private ImageView addButton;
+    private ImageView plusButton;
     private ImageView minusButton;
     private ToggleButton tempPowerButton;
 
@@ -27,23 +28,34 @@ public class TempActivity extends AppCompatActivity {
     private ImageView coolButton;
     private ImageView hotButton;
 
+    private SeekBar seekBarTemp;
+
+    // Current Power on
     private boolean tempChecked = true;
-    private int count = 70;
+    // Current temperature
+    private int tempCount = 70;
 
-    private SeekBar seekBarMain;
-
+    private boolean autoChecked = false;
+    private boolean sleepChecked = false;
+    private boolean coolChecked = false;
+    private boolean hotChecked = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temp);
 
+        // Get id of back image
         backImage = findViewById(R.id.img_back);
 
+        // Get id of value of temperature
         temperatureNum = findViewById(R.id.temperature_Number);
-        addButton = findViewById(R.id.btn_temp_plus);
+
+        // Get id of plus/minus button
+        plusButton = findViewById(R.id.btn_temp_plus);
         minusButton = findViewById(R.id.btn_temp_minus);
 
+        // Get id of power button
         tempPowerButton = findViewById(R.id.btn_temp);
 
         // Back button
@@ -54,40 +66,36 @@ public class TempActivity extends AppCompatActivity {
             }
         });
 
-        addButton = findViewById(R.id.btn_temp_plus);
-        minusButton = findViewById(R.id.btn_temp_minus);
-
+        // Get id of each mode button
         autoButton = (ImageView) findViewById(R.id.img_temp_auto_unclick);
         sleepButton = (ImageView) findViewById(R.id.img_temp_sleep_unclick);
         coolButton = (ImageView) findViewById(R.id.img_temp_cool_unclick);
         hotButton = (ImageView) findViewById(R.id.img_temp_hot_unclick);
 
+        // Start each mode method
         clickAutoButton(autoButton);
         clickSleepButton(sleepButton);
         clickCoolButton(coolButton);
         clickHotButton(hotButton);
 
+        // Call the object reference PlusMinusButton
         PlusMinusButton plusMinusButton = new PlusMinusButton();
-        temperatureNum.setText(count + "");
-        addButton.setOnClickListener(plusMinusButton);
+        temperatureNum.setText(tempCount + "");
+        plusButton.setOnClickListener(plusMinusButton);
         minusButton.setOnClickListener(plusMinusButton);
 
-        seekBarMain = (SeekBar) findViewById(R.id.seekBar1);
-        TextView textView = (TextView) findViewById(R.id.textView);
+        // Get id of temperature seekBar
+        seekBarTemp = (SeekBar) findViewById(R.id.seekBar_temp);
 
+        // Click listener for power button
         tempPowerButton.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
-
                 tempChecked = !tempChecked;
-
                 if (tempChecked) {
                     tempPowerButton.setBackgroundResource(R.drawable.ic_on_big);
-
                 } else {
                     tempPowerButton.setBackgroundResource(R.drawable.ic_off_big);
-
                 }
             }
         });
@@ -110,17 +118,17 @@ public class TempActivity extends AppCompatActivity {
             if (tempChecked == true) { // When you click Climate On/Off button
                 switch (v.getId()) {
                     case R.id.btn_temp_plus: {
-                        if (count < 85) {
-                            count = count + 1;
+                        if (tempCount < 85) {
+                            tempCount = tempCount + 1;
                         }
-                        temperatureNum.setText(count + "");
+                        temperatureNum.setText(tempCount + "");
                         break;
                     }
                     case R.id.btn_temp_minus: {
-                        if (count > 65) {
-                            count = count - 1;
+                        if (tempCount > 65) {
+                            tempCount = tempCount - 1;
                         }
-                        temperatureNum.setText(count + "");
+                        temperatureNum.setText(tempCount + "");
                         break;
                     }
                 }
@@ -136,12 +144,7 @@ public class TempActivity extends AppCompatActivity {
         }
     }
 
-
-    private boolean autoChecked = false;
-    private boolean sleepChecked = false;
-    private boolean coolChecked = false;
-    private boolean hotChecked = false;
-
+    // Click to change the status of Auto mode
     private void clickAutoButton(ImageView autoButton) {
         autoButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -163,6 +166,7 @@ public class TempActivity extends AppCompatActivity {
         });
     }
 
+    // Click to change the status of Sleep mode
     private void clickSleepButton(ImageView sleepButton) {
         sleepButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -184,6 +188,7 @@ public class TempActivity extends AppCompatActivity {
         });
     }
 
+    // Click to change the status of Cool mode
     private void clickCoolButton(ImageView coolButton) {
         coolButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -204,6 +209,7 @@ public class TempActivity extends AppCompatActivity {
         });
     }
 
+    // Click to change the status of Hot mode
     private void clickHotButton(ImageView hotButton) {
         hotButton.setOnClickListener(new View.OnClickListener() {
             @Override

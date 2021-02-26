@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!--
+Author: Mark, Sally AppForest.kr
+Date: 2.26.2021
+Description: Dialog fragment
+Rights: Copyrighted templates and codes. This template and code cannot be used without a license. Also, even if you have purchased a license, it can only be used with one specific end product.
+Copyright 2021 © AppForest.kr-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,8 +16,8 @@
         android:layout_width="550dp"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:padding="24dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="24dp">
 
         <TextView
             android:id="@+id/textView10"
@@ -20,7 +25,6 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
             android:gravity="center_horizontal"
-            android:lineSpacingExtra="3sp"
             android:text="Turn on the wifi to connect devices."
             android:textColor="#000000"
             android:textSize="16sp"
@@ -39,7 +43,6 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
             android:gravity="center_horizontal"
-            android:lineSpacingExtra="3sp"
             android:text="Connecting …"
             android:textColor="#000000"
             android:textSize="16sp"

@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!--
+Author: Mark, Sally AppForest.kr
+Date: 2.26.2021
+Description: Light setting screen
+Rights: Copyrighted templates and codes. This template and code cannot be used without a license. Also, even if you have purchased a license, it can only be used with one specific end product.
+Copyright 2021 © AppForest.kr-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -39,7 +44,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="sans-serif-medium"
-                android:lineSpacingExtra="4sp"
                 android:text="Light"
                 android:textColor="#000000"
                 android:textSize="18sp"
@@ -70,7 +74,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:lineSpacingExtra="3sp"
                     android:text="Energy Usage (Today)"
                     android:textColor="#000000"
                     android:textSize="14sp"
@@ -85,7 +88,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:fontFamily="@font/montserrat_semibold"
-                android:lineSpacingExtra="4sp"
                 android:text="10.2 kw"
                 android:textColor="#000000"
                 android:textSize="15sp"
@@ -174,7 +176,6 @@
                     android:id="@+id/linearLayout7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:layout_marginTop="40dp"
                     android:orientation="horizontal">
 

@@ -49,69 +49,70 @@ public class StatsFragment extends Fragment {
         ListView listview;
         StatsListViewAdapter adapter;
 
-        // Adapter 생성
+        // Create Adapter
         adapter = new StatsListViewAdapter();
 
-        // 리스트뷰 참조 및 Adapter달기
+        // Reference listview
         listview = (ListView) view.findViewById(R.id.listView);
         listview.setAdapter(adapter);
 
-        // 첫 번째 아이템 추가.
+        // Add the first item
         adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_tv),
                 "TV", "6.2 kw", "$0.90");
-        // 두 번째 아이템 추가.
+        // Add the second item
         adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_aircon),
                 "A/C", "5.5 kw", "$0.85");
-        // 세 번째 아이템 추가.
+        // Add the third item
         adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_speaker),
                 "Speaker", "2.7 kw", "$0.50");
-
+        // Add the fourth item
         adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_washing),
                 "Washer", "4.0 kw", "$0.69");
-
+        // Add the fifth item
         adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_fan),
                 "Fan", "1.6 kw", "$0.32");
-
+        // Add the sixth item
         adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_refrigerator),
                 "Fridge", "5.1 kw", "$0.72");
-
+        // Add the seventh item
         adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.ic_oven),
                 "Oven", "3.7 kw", "$0.52");
-
 
         setHasOptionsMenu(true);
 
 
+        // Drawing Line chart
         {   // // Chart Style // //
             chart = view.findViewById(R.id.chart_line);
 
-            // background color
+            // Background color
             chart.setBackgroundColor(Color.rgb(248, 248, 247));
 
-            // disable description text
+            // Disable description text
             chart.getDescription().setEnabled(false);
 
-            // enable touch gestures
+            // Enable touch gestures
             chart.setTouchEnabled(true);
 
 
             chart.setDrawGridBackground(false);
 
-            // create marker to display box when values are selected
-            UsageMarkerView mv = new UsageMarkerView(getActivity(), R.layout.custom_marker_view);
+            // Create marker to display box when values are selected
+            UsageMarkerView mv = new UsageMarkerView(getActivity(), R.layout.linechart_marker_view);
 
             // Set the marker to the chart
             mv.setChartView(chart);
             chart.setMarker(mv);
 
-            // enable scaling and dragging
+            // Enable scaling and dragging
             chart.setDragEnabled(true);
             chart.setScaleEnabled(true);
 
-            // force pinch zoom along both axis
+            // Force pinch zoom along both axis
             chart.setPinchZoom(true);
         }
 
+        // X-axis Label
         final ArrayList<String> xLabel = new ArrayList<>();
         xLabel.add("MON");
         xLabel.add("TUE");
@@ -160,11 +161,10 @@ public class StatsFragment extends Fragment {
 
         chart.animateXY(1000, 1000);
 
-        // don't forget to refresh the drawing
+        // Don't forget to refresh the drawing
         chart.invalidate();
 
         return view;
-
 
 
     }
@@ -228,10 +228,10 @@ public class StatsFragment extends Fragment {
             ArrayList<ILineDataSet> dataSets = new ArrayList<>();
             dataSets.add(set1); // add the data sets
 
-            // create a data object with the data sets
+            // Create a data object with the data sets
             LineData data = new LineData(dataSets);
 
-            // set data
+            // Set data
             chart.setData(data);
 
 
